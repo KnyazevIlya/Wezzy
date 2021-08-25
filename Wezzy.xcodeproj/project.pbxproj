@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8454180D26D679AD00480569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180C26D679AD00480569 /* AppDelegate.swift */; };
+		8454180F26D679AD00480569 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180E26D679AD00480569 /* SceneDelegate.swift */; };
+		8454181126D679AD00480569 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454181026D679AD00480569 /* ViewController.swift */; };
+		8454181426D679AD00480569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454181226D679AD00480569 /* Main.storyboard */; };
+		8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8454181526D679AD00480569 /* Wezzy.xcdatamodeld */; };
+		8454181926D679B100480569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454181826D679B100480569 /* Assets.xcassets */; };
+		8454181C26D679B100480569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454181A26D679B100480569 /* LaunchScreen.storyboard */; };
+		8454182726D679B100480569 /* WezzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454182626D679B100480569 /* WezzyTests.swift */; };
+		8454183226D679B100480569 /* WezzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454183126D679B100480569 /* WezzyUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8454182326D679B100480569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8454180126D679AD00480569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8454180826D679AD00480569;
+			remoteInfo = Wezzy;
+		};
+		8454182E26D679B100480569 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8454180126D679AD00480569 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8454180826D679AD00480569;
+			remoteInfo = Wezzy;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		8454180926D679AD00480569 /* Wezzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8454180C26D679AD00480569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8454180E26D679AD00480569 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8454181026D679AD00480569 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8454181326D679AD00480569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8454181626D679AD00480569 /* Wezzy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezzy.xcdatamodel; sourceTree = "<group>"; };
+		8454181826D679B100480569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8454181B26D679B100480569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8454181D26D679B100480569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8454182226D679B100480569 /* WezzyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WezzyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8454182626D679B100480569 /* WezzyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezzyTests.swift; sourceTree = "<group>"; };
+		8454182826D679B100480569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8454182D26D679B100480569 /* WezzyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WezzyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8454183126D679B100480569 /* WezzyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezzyUITests.swift; sourceTree = "<group>"; };
+		8454183326D679B100480569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8454180626D679AD00480569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454181F26D679B100480569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454182A26D679B100480569 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8454180026D679AD00480569 = {
+			isa = PBXGroup;
+			children = (
+				8454180B26D679AD00480569 /* Wezzy */,
+				8454182526D679B100480569 /* WezzyTests */,
+				8454183026D679B100480569 /* WezzyUITests */,
+				8454180A26D679AD00480569 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8454180A26D679AD00480569 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8454180926D679AD00480569 /* Wezzy.app */,
+				8454182226D679B100480569 /* WezzyTests.xctest */,
+				8454182D26D679B100480569 /* WezzyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8454180B26D679AD00480569 /* Wezzy */ = {
+			isa = PBXGroup;
+			children = (
+				8454180C26D679AD00480569 /* AppDelegate.swift */,
+				8454180E26D679AD00480569 /* SceneDelegate.swift */,
+				8454181026D679AD00480569 /* ViewController.swift */,
+				8454181226D679AD00480569 /* Main.storyboard */,
+				8454181826D679B100480569 /* Assets.xcassets */,
+				8454181A26D679B100480569 /* LaunchScreen.storyboard */,
+				8454181D26D679B100480569 /* Info.plist */,
+				8454181526D679AD00480569 /* Wezzy.xcdatamodeld */,
+			);
+			path = Wezzy;
+			sourceTree = "<group>";
+		};
+		8454182526D679B100480569 /* WezzyTests */ = {
+			isa = PBXGroup;
+			children = (
+				8454182626D679B100480569 /* WezzyTests.swift */,
+				8454182826D679B100480569 /* Info.plist */,
+			);
+			path = WezzyTests;
+			sourceTree = "<group>";
+		};
+		8454183026D679B100480569 /* WezzyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8454183126D679B100480569 /* WezzyUITests.swift */,
+				8454183326D679B100480569 /* Info.plist */,
+			);
+			path = WezzyUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8454180826D679AD00480569 /* Wezzy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8454183626D679B100480569 /* Build configuration list for PBXNativeTarget "Wezzy" */;
+			buildPhases = (
+				8454180526D679AD00480569 /* Sources */,
+				8454180626D679AD00480569 /* Frameworks */,
+				8454180726D679AD00480569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wezzy;
+			productName = Wezzy;
+			productReference = 8454180926D679AD00480569 /* Wezzy.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8454182126D679B100480569 /* WezzyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8454183926D679B100480569 /* Build configuration list for PBXNativeTarget "WezzyTests" */;
+			buildPhases = (
+				8454181E26D679B100480569 /* Sources */,
+				8454181F26D679B100480569 /* Frameworks */,
+				8454182026D679B100480569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8454182426D679B100480569 /* PBXTargetDependency */,
+			);
+			name = WezzyTests;
+			productName = WezzyTests;
+			productReference = 8454182226D679B100480569 /* WezzyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8454182C26D679B100480569 /* WezzyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8454183C26D679B100480569 /* Build configuration list for PBXNativeTarget "WezzyUITests" */;
+			buildPhases = (
+				8454182926D679B100480569 /* Sources */,
+				8454182A26D679B100480569 /* Frameworks */,
+				8454182B26D679B100480569 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8454182F26D679B100480569 /* PBXTargetDependency */,
+			);
+			name = WezzyUITests;
+			productName = WezzyUITests;
+			productReference = 8454182D26D679B100480569 /* WezzyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8454180126D679AD00480569 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					8454180826D679AD00480569 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					8454182126D679B100480569 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8454180826D679AD00480569;
+					};
+					8454182C26D679B100480569 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 8454180826D679AD00480569;
+					};
+				};
+			};
+			buildConfigurationList = 8454180426D679AD00480569 /* Build configuration list for PBXProject "Wezzy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8454180026D679AD00480569;
+			productRefGroup = 8454180A26D679AD00480569 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8454180826D679AD00480569 /* Wezzy */,
+				8454182126D679B100480569 /* WezzyTests */,
+				8454182C26D679B100480569 /* WezzyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8454180726D679AD00480569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8454181C26D679B100480569 /* LaunchScreen.storyboard in Resources */,
+				8454181926D679B100480569 /* Assets.xcassets in Resources */,
+				8454181426D679AD00480569 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454182026D679B100480569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454182B26D679B100480569 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8454180526D679AD00480569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8454181126D679AD00480569 /* ViewController.swift in Sources */,
+				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
+				8454180F26D679AD00480569 /* SceneDelegate.swift in Sources */,
+				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454181E26D679B100480569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8454182726D679B100480569 /* WezzyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8454182926D679B100480569 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8454183226D679B100480569 /* WezzyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8454182426D679B100480569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8454180826D679AD00480569 /* Wezzy */;
+			targetProxy = 8454182326D679B100480569 /* PBXContainerItemProxy */;
+		};
+		8454182F26D679B100480569 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8454180826D679AD00480569 /* Wezzy */;
+			targetProxy = 8454182E26D679B100480569 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8454181226D679AD00480569 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8454181326D679AD00480569 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8454181A26D679B100480569 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8454181B26D679B100480569 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8454183426D679B100480569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8454183526D679B100480569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8454183726D679B100480569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 832H9LUWZZ;
+				INFOPLIST_FILE = Wezzy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ihomeCourses.Wezzy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8454183826D679B100480569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 832H9LUWZZ;
+				INFOPLIST_FILE = Wezzy/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ihomeCourses.Wezzy;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8454183A26D679B100480569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 832H9LUWZZ;
+				INFOPLIST_FILE = WezzyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ihomeCourses.WezzyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wezzy.app/Wezzy";
+			};
+			name = Debug;
+		};
+		8454183B26D679B100480569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 832H9LUWZZ;
+				INFOPLIST_FILE = WezzyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ihomeCourses.WezzyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Wezzy.app/Wezzy";
+			};
+			name = Release;
+		};
+		8454183D26D679B100480569 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 832H9LUWZZ;
+				INFOPLIST_FILE = WezzyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ihomeCourses.WezzyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wezzy;
+			};
+			name = Debug;
+		};
+		8454183E26D679B100480569 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 832H9LUWZZ;
+				INFOPLIST_FILE = WezzyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = ihomeCourses.WezzyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Wezzy;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8454180426D679AD00480569 /* Build configuration list for PBXProject "Wezzy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8454183426D679B100480569 /* Debug */,
+				8454183526D679B100480569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8454183626D679B100480569 /* Build configuration list for PBXNativeTarget "Wezzy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8454183726D679B100480569 /* Debug */,
+				8454183826D679B100480569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8454183926D679B100480569 /* Build configuration list for PBXNativeTarget "WezzyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8454183A26D679B100480569 /* Debug */,
+				8454183B26D679B100480569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8454183C26D679B100480569 /* Build configuration list for PBXNativeTarget "WezzyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8454183D26D679B100480569 /* Debug */,
+				8454183E26D679B100480569 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8454181526D679AD00480569 /* Wezzy.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8454181626D679AD00480569 /* Wezzy.xcdatamodel */,
+			);
+			currentVersion = 8454181626D679AD00480569 /* Wezzy.xcdatamodel */;
+			path = Wezzy.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8454180126D679AD00480569 /* Project object */;
+}
