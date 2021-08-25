@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8454180D26D679AD00480569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180C26D679AD00480569 /* AppDelegate.swift */; };
-		8454180F26D679AD00480569 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180E26D679AD00480569 /* SceneDelegate.swift */; };
-		8454181126D679AD00480569 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454181026D679AD00480569 /* ViewController.swift */; };
-		8454181426D679AD00480569 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454181226D679AD00480569 /* Main.storyboard */; };
+		8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454181026D679AD00480569 /* LocationsPreviewViewController.swift */; };
 		8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8454181526D679AD00480569 /* Wezzy.xcdatamodeld */; };
 		8454181926D679B100480569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454181826D679B100480569 /* Assets.xcassets */; };
 		8454181C26D679B100480569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454181A26D679B100480569 /* LaunchScreen.storyboard */; };
@@ -38,9 +36,7 @@
 /* Begin PBXFileReference section */
 		8454180926D679AD00480569 /* Wezzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454180C26D679AD00480569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8454180E26D679AD00480569 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		8454181026D679AD00480569 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		8454181326D679AD00480569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8454181026D679AD00480569 /* LocationsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPreviewViewController.swift; sourceTree = "<group>"; };
 		8454181626D679AD00480569 /* Wezzy.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Wezzy.xcdatamodel; sourceTree = "<group>"; };
 		8454181826D679B100480569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8454181B26D679B100480569 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -102,9 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				8454180C26D679AD00480569 /* AppDelegate.swift */,
-				8454180E26D679AD00480569 /* SceneDelegate.swift */,
-				8454181026D679AD00480569 /* ViewController.swift */,
-				8454181226D679AD00480569 /* Main.storyboard */,
+				8454181026D679AD00480569 /* LocationsPreviewViewController.swift */,
 				8454181826D679B100480569 /* Assets.xcassets */,
 				8454181A26D679B100480569 /* LaunchScreen.storyboard */,
 				8454181D26D679B100480569 /* Info.plist */,
@@ -236,7 +230,6 @@
 			files = (
 				8454181C26D679B100480569 /* LaunchScreen.storyboard in Resources */,
 				8454181926D679B100480569 /* Assets.xcassets in Resources */,
-				8454181426D679AD00480569 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,9 +254,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8454181126D679AD00480569 /* ViewController.swift in Sources */,
+				8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */,
 				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
-				8454180F26D679AD00480569 /* SceneDelegate.swift in Sources */,
 				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,14 +292,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8454181226D679AD00480569 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8454181326D679AD00480569 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		8454181A26D679B100480569 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
