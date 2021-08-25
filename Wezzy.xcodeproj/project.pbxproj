@@ -14,6 +14,7 @@
 		8454181C26D679B100480569 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8454181A26D679B100480569 /* LaunchScreen.storyboard */; };
 		8454182726D679B100480569 /* WezzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454182626D679B100480569 /* WezzyTests.swift */; };
 		8454183226D679B100480569 /* WezzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454183126D679B100480569 /* WezzyUITests.swift */; };
+		8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454185026D6B68D00480569 /* PreviewCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		8454182D26D679B100480569 /* WezzyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WezzyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454183126D679B100480569 /* WezzyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezzyUITests.swift; sourceTree = "<group>"; };
 		8454183326D679B100480569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8454185026D6B68D00480569 /* PreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +99,11 @@
 		8454180B26D679AD00480569 /* Wezzy */ = {
 			isa = PBXGroup;
 			children = (
-				8454180C26D679AD00480569 /* AppDelegate.swift */,
-				8454181026D679AD00480569 /* LocationsPreviewViewController.swift */,
-				8454181826D679B100480569 /* Assets.xcassets */,
-				8454181A26D679B100480569 /* LaunchScreen.storyboard */,
-				8454181D26D679B100480569 /* Info.plist */,
-				8454181526D679AD00480569 /* Wezzy.xcdatamodeld */,
+				8454184B26D6B3AE00480569 /* Model */,
+				8454184C26D6B3C800480569 /* View */,
+				8454184D26D6B3E100480569 /* Controller */,
+				8454184F26D6B48200480569 /* Resources */,
+				8454184E26D6B47600480569 /* Supportive files */,
 			);
 			path = Wezzy;
 			sourceTree = "<group>";
@@ -123,6 +124,48 @@
 				8454183326D679B100480569 /* Info.plist */,
 			);
 			path = WezzyUITests;
+			sourceTree = "<group>";
+		};
+		8454184B26D6B3AE00480569 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8454181526D679AD00480569 /* Wezzy.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8454184C26D6B3C800480569 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8454181A26D679B100480569 /* LaunchScreen.storyboard */,
+				8454185026D6B68D00480569 /* PreviewCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8454184D26D6B3E100480569 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8454181026D679AD00480569 /* LocationsPreviewViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8454184E26D6B47600480569 /* Supportive files */ = {
+			isa = PBXGroup;
+			children = (
+				8454180C26D679AD00480569 /* AppDelegate.swift */,
+				8454181D26D679B100480569 /* Info.plist */,
+			);
+			path = "Supportive files";
+			sourceTree = "<group>";
+		};
+		8454184F26D6B48200480569 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8454181826D679B100480569 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +300,7 @@
 				8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */,
 				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
 				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
+				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +470,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832H9LUWZZ;
-				INFOPLIST_FILE = Wezzy/Info.plist;
+				INFOPLIST_FILE = "Wezzy/Supportive files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -445,7 +489,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832H9LUWZZ;
-				INFOPLIST_FILE = Wezzy/Info.plist;
+				INFOPLIST_FILE = "Wezzy/Supportive files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -464,7 +508,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832H9LUWZZ;
-				INFOPLIST_FILE = WezzyTests/Info.plist;
+				INFOPLIST_FILE = "Wezzy/Supportive files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -486,7 +530,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832H9LUWZZ;
-				INFOPLIST_FILE = WezzyTests/Info.plist;
+				INFOPLIST_FILE = "Wezzy/Supportive files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -507,7 +551,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832H9LUWZZ;
-				INFOPLIST_FILE = WezzyUITests/Info.plist;
+				INFOPLIST_FILE = "Wezzy/Supportive files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +571,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 832H9LUWZZ;
-				INFOPLIST_FILE = WezzyUITests/Info.plist;
+				INFOPLIST_FILE = "Wezzy/Supportive files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
