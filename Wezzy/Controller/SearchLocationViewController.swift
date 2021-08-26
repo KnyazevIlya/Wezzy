@@ -6,12 +6,125 @@
 //
 
 import UIKit
+import MapKit
 
 class SearchLocationViewController: UIViewController {
 
+    //MARK: - private properties
+    private let mainColor = UIColor.systemGray5
+    private var completions = [MKLocalSearchCompletion]()
+    private let completer = MKLocalSearchCompleter()
+    
+    private let searchBar: UISearchBar = {
+        let bar = UISearchBar()
+        bar.translatesAutoresizingMaskIntoConstraints = false
+        bar.searchBarStyle = .minimal
+        return bar
+    }()
+    
+    private let tableView: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        return table
+    }()
+    
+    //MARK: - life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .systemRed
+        view.backgroundColor = mainColor
+        completer.delegate = self
+        configureSearchBar()
+        configureTableView()
+        configureKeyboardAdjustment()
+    }
+    
+    //MARK: - layout configuration
+    private func configureSearchBar() {
+        searchBar.backgroundColor = mainColor
+        
+        view.addSubview(searchBar)
+        searchBar.delegate = self
+        
+        NSLayoutConstraint.activate([
+            searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
+            searchBar.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
+            searchBar.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10)
+        ])
+    }
+    
+    private func configureTableView() {
+        tableView.backgroundColor = mainColor
+        
+        view.addSubview(tableView)
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 10),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    //MARK: - keyboard adjustment
+    private func configureKeyboardAdjustment() {
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillHideNotification, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(adjustForKeyboard), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+    }
+    
+    @objc private func adjustForKeyboard(notification: Notification) {
+        let userInfo = notification.userInfo!
+
+        let keyboardScreenEndFrame = (userInfo[UIResponder.keyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let keyboardViewEndFrame = view.convert(keyboardScreenEndFrame, from: view.window)
+
+        if notification.name == UIResponder.keyboardWillHideNotification {
+            tableView.contentInset = UIEdgeInsets.zero
+        } else {
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: keyboardViewEndFrame.height - view.safeAreaInsets.bottom, right: 0)
+        }
+
+        tableView.scrollIndicatorInsets = tableView.contentInset
+    }
+    
+}
+
+//MARK: - UISearchBarDelegate
+extension SearchLocationViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        completer.queryFragment = searchText
+    }
+}
+
+//MARK: - UITableViewDelegate & DataSource
+extension SearchLocationViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        30
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let searchResult = completions[indexPath.row]
+        
+        let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
+        cell.backgroundColor = mainColor
+        cell.textLabel?.text = "sffsfsfssffs \(indexPath.row)"
+        
+        return cell
+    }
+}
+
+//MARK: - MKLocalSearchCompleterDelegate
+extension SearchLocationViewController: MKLocalSearchCompleterDelegate {
+    func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            //City names typically contain at least one comma
+            self?.completions = completer.results.filter { $0.title.contains(",") }
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }
