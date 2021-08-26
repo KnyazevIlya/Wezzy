@@ -45,6 +45,7 @@ class SearchLocationViewController: UIViewController {
         
         view.addSubview(searchBar)
         searchBar.delegate = self
+        searchBar.becomeFirstResponder()
         
         NSLayoutConstraint.activate([
             searchBar.topAnchor.constraint(equalTo: view.topAnchor, constant: 20),
@@ -102,15 +103,15 @@ extension SearchLocationViewController: UISearchBarDelegate {
 //MARK: - UITableViewDelegate & DataSource
 extension SearchLocationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        30
+        completions.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let searchResult = completions[indexPath.row]
+        let searchResult = completions[indexPath.row]
         
         let cell = UITableViewCell(style: .default, reuseIdentifier: nil)
         cell.backgroundColor = mainColor
-        cell.textLabel?.text = "sffsfsfssffs \(indexPath.row)"
+        cell.textLabel?.text = searchResult.title
         
         return cell
     }
