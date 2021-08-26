@@ -15,6 +15,8 @@
 		8454182726D679B100480569 /* WezzyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454182626D679B100480569 /* WezzyTests.swift */; };
 		8454183226D679B100480569 /* WezzyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454183126D679B100480569 /* WezzyUITests.swift */; };
 		8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454185026D6B68D00480569 /* PreviewCollectionViewCell.swift */; };
+		8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454186626D7E28C00480569 /* AddPreviewCollectionViewCell.swift */; };
+		8454186F26D7EDE200480569 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454186E26D7EDE200480569 /* SearchLocationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		8454183126D679B100480569 /* WezzyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WezzyUITests.swift; sourceTree = "<group>"; };
 		8454183326D679B100480569 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8454185026D6B68D00480569 /* PreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		8454186626D7E28C00480569 /* AddPreviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPreviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		8454186E26D7EDE200480569 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +143,7 @@
 			children = (
 				8454181A26D679B100480569 /* LaunchScreen.storyboard */,
 				8454185026D6B68D00480569 /* PreviewCollectionViewCell.swift */,
+				8454186626D7E28C00480569 /* AddPreviewCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				8454181026D679AD00480569 /* LocationsPreviewViewController.swift */,
+				8454186E26D7EDE200480569 /* SearchLocationViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +306,8 @@
 				8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */,
 				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
 				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
+				8454186F26D7EDE200480569 /* SearchLocationViewController.swift in Sources */,
+				8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */,
 				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

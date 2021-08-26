@@ -32,7 +32,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
-        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 36)
         label.textColor = .white
         return label
@@ -42,7 +42,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
-        label.minimumScaleFactor = 0.5
+        label.adjustsFontSizeToFitWidth = true
         label.font = UIFont.systemFont(ofSize: 48)
         label.textColor = .white
         return label
@@ -50,6 +50,8 @@ class PreviewCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        
+        backgroundColor = .systemGray4
         
         configureBackgroundImage()
         configureForegroundImage()
