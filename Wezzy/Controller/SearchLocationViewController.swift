@@ -10,6 +10,10 @@ import MapKit
 
 class SearchLocationViewController: UIViewController {
 
+    //MARK: - public properties
+    
+    weak var delegate: AddPreviewDelegate?
+    
     //MARK: - private properties
     private let mainColor = UIColor.systemGray5
     private var completions = [MKLocalSearchCompletion]()
@@ -114,6 +118,29 @@ extension SearchLocationViewController: UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = searchResult.title
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let completion = completions[indexPath.row]
+        let searchRequest = MKLocalSearch.Request(completion: completion)
+        
+        let search = MKLocalSearch(request: searchRequest)
+        DispatchQueue.global().async { [weak self] in
+            search.start { (response, error) in
+                
+                DispatchQueue.main.async {
+                    self?.dismiss(animated: true)
+                }
+                
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    guard let response = response else { return }
+                    
+                    self?.delegate?.add(mapItem: response.mapItems[0])
+                }
+            }
+        }
     }
 }
 
