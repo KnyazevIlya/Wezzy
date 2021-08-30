@@ -27,14 +27,7 @@ class LocationsPreviewViewController: UIViewController {
         
         view.backgroundColor = .systemGray6
         configureCollectionView()
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            self?.fetchPreviews { (previews) in
-                self?.previews = previews
-                DispatchQueue.main.async {
-                    self?.collectionView.reloadData()
-                }
-            }
-        }
+        updatePreviews()
     }
 
     //MARK: - layout configuration
@@ -86,9 +79,21 @@ class LocationsPreviewViewController: UIViewController {
         newPreview.lat = coordinates.latitude
         newPreview.lon = coordinates.longitude
         newPreview.temperature = Int64(data.current.temp)
+        newPreview.conditionId = data.current.weather[0].id
         newPreview.lastUpdate = Date()
         
         updateContext()
+    }
+    
+    private func updatePreviews() {
+        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+            self?.fetchPreviews { (previews) in
+                self?.previews = previews
+                DispatchQueue.main.async {
+                    self?.collectionView.reloadData()
+                }
+            }
+        }
     }
 }
 
@@ -136,22 +141,28 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             
             let differenceComponents = Calendar.current.dateComponents([.minute], from: preview.lastUpdate!, to: Date())
             if differenceComponents.minute! > 30 {
-                print("<30 1) \(preview.lastUpdate!.description) 2) \(Date().description)")
+                print(">30 1) \(preview.lastUpdate!.description) 2) \(Date().description)")
                 let coords = CLLocationCoordinate2D(latitude: preview.lat, longitude: preview.lon)
                 let url = createURLForPreview(with: coords, isCelsius: true)
-                RequestManager.shared.fetchJSON(withURL: url) { (result: Result<CWRoot, Error>) in
+                RequestManager.shared.fetchJSON(withURL: url) { [weak self] (result: Result<CWRoot, Error>) in
                     switch result {
                     case .failure(let error):
                         print(error.localizedDescription)
                     case .success(let model):
+                        print("data updated from \(preview.lastUpdate!.description) to \(Date().description)")
                         preview.lastUpdate = Date()
                         preview.temperature = Int64(model.current.temp)
+                        preview.conditionId = model.current.weather[0].id
+                        self?.updateContext()
                     }
                 }
             }
+            //TODO: - ПЕРЕДЕЛАТЬ ЭТУ ХРЕНЬ!!!!!!!!
             
+            
+            //TODO: - install Pod to use svg animations
             cell.backgroundImage.image = #imageLiteral(resourceName: "testImage")
-            cell.foregroundImage.image = UIImage(named: "partly-cloudy-day-snow")
+            //cell.foregroundImage.image = UIImage(named: imgName)
             cell.nameLabel.text = preview.name
             cell.temperatureLabel.text = "\(preview.temperature)℃"
             return cell
@@ -171,12 +182,7 @@ extension LocationsPreviewViewController: AddPreviewDelegate {
                     //TODO: - show error alert
                 case .success(let model):
                     self?.addPreview(withName: mapItem.name!, data: model, coordinates: mapItem.placemark.coordinate)
-                    self?.fetchPreviews(completion: { (previews) in
-                        self?.previews = previews
-                        DispatchQueue.main.async {
-                            self?.collectionView.reloadData()
-                        }
-                    })
+                    self?.updatePreviews()
                 }
             }
         }

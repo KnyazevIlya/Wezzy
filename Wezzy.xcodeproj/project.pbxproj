@@ -19,6 +19,7 @@
 		8454186F26D7EDE200480569 /* SearchLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454186E26D7EDE200480569 /* SearchLocationViewController.swift */; };
 		8454188326DA8C8800480569 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454188226DA8C8800480569 /* RequestManager.swift */; };
 		8454188826DA9BAC00480569 /* CurrentWeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454188726DA9BAC00480569 /* CurrentWeatherModel.swift */; };
+		8454188D26DC334C00480569 /* WeatherConditionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454188C26DC334C00480569 /* WeatherConditionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8454186E26D7EDE200480569 /* SearchLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchLocationViewController.swift; sourceTree = "<group>"; };
 		8454188226DA8C8800480569 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		8454188726DA9BAC00480569 /* CurrentWeatherModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentWeatherModel.swift; sourceTree = "<group>"; };
+		8454188C26DC334C00480569 /* WeatherConditionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherConditionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				8454188226DA8C8800480569 /* RequestManager.swift */,
+				8454188C26DC334C00480569 /* WeatherConditionManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				8454188326DA8C8800480569 /* RequestManager.swift in Sources */,
 				8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */,
 				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
+				8454188D26DC334C00480569 /* WeatherConditionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
