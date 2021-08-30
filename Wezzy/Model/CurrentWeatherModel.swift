@@ -15,7 +15,7 @@ struct CWCurrent: Codable {
 }
 
 struct CWWeather: Codable {
-    var id: String
+    var id: Int
     var main: String
     var description: String
     var icon: String

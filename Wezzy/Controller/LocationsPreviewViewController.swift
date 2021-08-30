@@ -79,7 +79,7 @@ class LocationsPreviewViewController: UIViewController {
         newPreview.lat = coordinates.latitude
         newPreview.lon = coordinates.longitude
         newPreview.temperature = Int64(data.current.temp)
-        newPreview.conditionId = data.current.weather[0].id
+        newPreview.conditionId = "\(data.current.weather[0].id)"
         newPreview.lastUpdate = Date()
         
         updateContext()
@@ -152,13 +152,19 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
                         print("data updated from \(preview.lastUpdate!.description) to \(Date().description)")
                         preview.lastUpdate = Date()
                         preview.temperature = Int64(model.current.temp)
-                        preview.conditionId = model.current.weather[0].id
+                        preview.conditionId = "\(model.current.weather[0].id)"
                         self?.updateContext()
                     }
                 }
             }
-            //TODO: - ПЕРЕДЕЛАТЬ ЭТУ ХРЕНЬ!!!!!!!!
-            
+            //TODO: move this logic to cell
+            let id = preview.conditionId!
+            if let conditionNameTuple = WeatherConditionManager.conditions[id] {
+                let conditionName = (conditionNameTuple as! [String])[0]
+                cell.foregroundImage.image = UIImage(named: conditionName)
+            } else {
+                cell .foregroundImage.image = UIImage(named: "not-available")
+            }
             
             //TODO: - install Pod to use svg animations
             cell.backgroundImage.image = #imageLiteral(resourceName: "testImage")
