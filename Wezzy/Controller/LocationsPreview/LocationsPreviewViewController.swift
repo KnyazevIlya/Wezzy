@@ -8,8 +8,8 @@
 import UIKit
 import MapKit
 
-protocol AddPreviewDelegate: AnyObject {
-    func add(mapItem: MKMapItem)
+protocol ManagePreviewDelegate: AnyObject {
+    func addPreview(mapItem: MKMapItem)
 }
 
 class LocationsPreviewViewController: UIViewController {
@@ -79,10 +79,22 @@ class LocationsPreviewViewController: UIViewController {
         newPreview.lat = coordinates.latitude
         newPreview.lon = coordinates.longitude
         newPreview.temperature = Int64(data.current.temp)
+        newPreview.currentTime = Int64(data.current.dt)
         newPreview.sunset = Int64(data.current.sunset)
         newPreview.sunrise = Int64(data.current.sunrise)
-        newPreview.conditionId = "\(data.current.weather[0].id)"
+        newPreview.conditionId = Int64(data.current.weather[0].id)
         newPreview.lastUpdate = Date()
+        
+        updateContext()
+    }
+    
+    private func updatePreview(preview: WeatherPreview, data: CWRoot) {
+        preview.lastUpdate = Date()
+        preview.temperature = Int64(data.current.temp)
+        preview.currentTime = Int64(data.current.dt)
+        preview.sunrise = Int64(data.current.sunrise)
+        preview.sunset = Int64(data.current.sunset)
+        preview.conditionId = Int64(data.current.weather[0].id)
         
         updateContext()
     }
@@ -150,19 +162,15 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
                     case .failure(let error):
                         print(error.localizedDescription)
                     case .success(let model):
-                        print("data updated from \(preview.lastUpdate!.description) to \(Date().description)")
-                        preview.lastUpdate = Date()
-                        preview.temperature = Int64(model.current.temp)
-                        preview.conditionId = "\(model.current.weather[0].id)"
-                        self?.updateContext()
+                        self?.updatePreview(preview: preview, data: model)
                     }
                 }
             }
             //TODO: move this logic to cell
-            let id = preview.conditionId!
-            if let conditionNameTuple = WeatherConditionManager.conditions[id] {
+            let id = preview.conditionId
+            if let conditionNameTuple = WeatherConditionManager.conditions[Int(id)] {
                 let daytimeCode = preview.isDay ? 0 : 1
-                let conditionName = (conditionNameTuple as! [String])[daytimeCode]
+                let conditionName = conditionNameTuple[daytimeCode]
                 cell.configureForeground(svgName: conditionName)
             } else {
                 cell.configureForeground(svgName: "not-available")
@@ -177,18 +185,31 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
 }
 
 //MARK: - AddPreviewDelegate
-extension LocationsPreviewViewController: AddPreviewDelegate {
-    func add(mapItem: MKMapItem) {
-        let url = createURLForPreview(with: mapItem.placemark.coordinate, isCelsius: true)
-        DispatchQueue.global().async {
-            RequestManager.shared.fetchJSON(withURL: url) { [weak self] (result: Result<CWRoot, Error>) in
-                switch result {
-                case .failure(let error):
-                    print(error.localizedDescription)
-                    //TODO: - show error alert
-                case .success(let model):
-                    self?.addPreview(withName: mapItem.name!, data: model, coordinates: mapItem.placemark.coordinate)
-                    self?.updatePreviews()
+extension LocationsPreviewViewController: ManagePreviewDelegate {
+    func addPreview(mapItem: MKMapItem) {
+        
+        if previews.contains(where: { $0.name == mapItem.name }) {
+            dismiss(animated: true) { [weak self] in
+                self?.showAlert(title: "This location has already been added to your list", message: nil)
+            }
+        } else {
+            let url = createURLForPreview(with: mapItem.placemark.coordinate, isCelsius: true)
+            DispatchQueue.global().async {
+                RequestManager.shared.fetchJSON(withURL: url) {
+                    [weak self] (result: Result<CWRoot, Error>) in
+                    
+                    switch result {
+                    case .failure(let error):
+                        DispatchQueue.main.async {
+                            self?.showAlert(
+                                title: "Connection error",
+                                message: "Can't establishe connection with the server. Error: \(error.localizedDescription).")
+                        }
+                        
+                    case .success(let model):
+                        self?.addPreview(withName: mapItem.name!, data: model, coordinates: mapItem.placemark.coordinate)
+                        self?.updatePreviews()
+                    }
                 }
             }
         }

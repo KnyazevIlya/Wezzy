@@ -11,8 +11,9 @@ struct CWRoot: Codable {
 
 struct CWCurrent: Codable {
     var temp: Double
-    var sunrise: Double
-    var sunset: Double
+    var sunrise: Int
+    var dt: Int
+    var sunset: Int
     var weather: [CWWeather]
 }
 
