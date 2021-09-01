@@ -59,6 +59,9 @@ class PreviewCollectionViewCell: UICollectionViewCell {
     }
     
     func configureForeground(svgName: String) {
+        if let view = foregroundImage {
+            view.removeFromSuperview()
+        }
         foregroundImage = SVGView(named: svgName, animationOwner: .svg)
         configureForegroundImage()
     }

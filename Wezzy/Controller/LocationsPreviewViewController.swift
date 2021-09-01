@@ -79,6 +79,8 @@ class LocationsPreviewViewController: UIViewController {
         newPreview.lat = coordinates.latitude
         newPreview.lon = coordinates.longitude
         newPreview.temperature = Int64(data.current.temp)
+        newPreview.sunset = Int64(data.current.sunset)
+        newPreview.sunrise = Int64(data.current.sunrise)
         newPreview.conditionId = "\(data.current.weather[0].id)"
         newPreview.lastUpdate = Date()
         
@@ -159,7 +161,8 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             //TODO: move this logic to cell
             let id = preview.conditionId!
             if let conditionNameTuple = WeatherConditionManager.conditions[id] {
-                let conditionName = (conditionNameTuple as! [String])[0]
+                let daytimeCode = preview.isDay ? 0 : 1
+                let conditionName = (conditionNameTuple as! [String])[daytimeCode]
                 cell.configureForeground(svgName: conditionName)
             } else {
                 cell.configureForeground(svgName: "not-available")
