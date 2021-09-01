@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Elephant
 
 class PreviewCollectionViewCell: UICollectionViewCell {
     
@@ -18,14 +19,6 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         bg.clipsToBounds = true
         bg.alpha = 0.8
         return bg
-    }()
-    
-    let foregroundImage: UIImageView = {
-        let fg = UIImageView()
-        fg.translatesAutoresizingMaskIntoConstraints = false
-        fg.adjustsImageSizeForAccessibilityContentSizeCategory = false
-        fg.contentMode = .scaleAspectFit
-        return fg
     }()
     
     let nameLabel: UILabel = {
@@ -48,19 +41,26 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
+    private var foregroundImage: SVGView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         backgroundColor = .systemGray4
         
         configureBackgroundImage()
-        configureForegroundImage()
+
         configureNameLabel()
         configureTemperatureLabel()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureForeground(svgName: String) {
+        foregroundImage = SVGView(named: svgName, animationOwner: .svg)
+        configureForegroundImage()
     }
     
     private func configureBackgroundImage() {
@@ -91,7 +91,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(equalTo: foregroundImage.leadingAnchor)
+            nameLabel.trailingAnchor.constraint(greaterThanOrEqualToSystemSpacingAfter: contentView.trailingAnchor, multiplier: 0.7)
         ])
     }
     
@@ -101,7 +101,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             temperatureLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             temperatureLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -10),
-            temperatureLabel.widthAnchor.constraint(equalTo: foregroundImage.widthAnchor)
+            temperatureLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 0.3)
         ])
     }
     

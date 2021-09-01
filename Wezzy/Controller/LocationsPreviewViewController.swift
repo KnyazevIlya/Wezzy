@@ -141,7 +141,6 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             
             let differenceComponents = Calendar.current.dateComponents([.minute], from: preview.lastUpdate!, to: Date())
             if differenceComponents.minute! > 30 {
-                print(">30 1) \(preview.lastUpdate!.description) 2) \(Date().description)")
                 let coords = CLLocationCoordinate2D(latitude: preview.lat, longitude: preview.lon)
                 let url = createURLForPreview(with: coords, isCelsius: true)
                 RequestManager.shared.fetchJSON(withURL: url) { [weak self] (result: Result<CWRoot, Error>) in
@@ -161,14 +160,12 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             let id = preview.conditionId!
             if let conditionNameTuple = WeatherConditionManager.conditions[id] {
                 let conditionName = (conditionNameTuple as! [String])[0]
-                cell.foregroundImage.image = UIImage(named: conditionName)
+                cell.configureForeground(svgName: conditionName)
             } else {
-                cell .foregroundImage.image = UIImage(named: "not-available")
+                cell.configureForeground(svgName: "not-available")
             }
             
-            //TODO: - install Pod to use svg animations
             cell.backgroundImage.image = #imageLiteral(resourceName: "testImage")
-            //cell.foregroundImage.image = UIImage(named: imgName)
             cell.nameLabel.text = preview.name
             cell.temperatureLabel.text = "\(preview.temperature)℃"
             return cell
