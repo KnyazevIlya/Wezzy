@@ -25,6 +25,8 @@ class LocationsPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Loccations"
+        navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemGray6
         configureCollectionView()
         updatePreviews()
@@ -55,6 +57,7 @@ class LocationsPreviewViewController: UIViewController {
         return url
     }
     
+    //MARK: - CoreData managing
     private func updateContext() {
         do {
             try context.save()
@@ -134,6 +137,10 @@ extension LocationsPreviewViewController: UICollectionViewDelegate {
             let vc = SearchLocationViewController()
             vc.delegate = self
             present(vc, animated: true)
+        } else {
+            let vc = DetailedViewController()
+            vc.preview = previews[indexPath.item]
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -189,9 +196,8 @@ extension LocationsPreviewViewController: ManagePreviewDelegate {
     func addPreview(mapItem: MKMapItem) {
         
         if previews.contains(where: { $0.name == mapItem.name }) {
-            dismiss(animated: true) { [weak self] in
-                self?.showAlert(title: "This location has already been added to your list", message: nil)
-            }
+            dismiss(animated: true)
+            showAlert(title: "This location has already been added to your list", message: nil)
         } else {
             let url = createURLForPreview(with: mapItem.placemark.coordinate, isCelsius: true)
             DispatchQueue.global().async {

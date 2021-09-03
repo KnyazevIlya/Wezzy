@@ -8,7 +8,14 @@ import Foundation
 
 extension WeatherPreview {
     var isDay: Bool {
-        if currentTime > sunset || currentTime < sunrise { return false }
-        return true
+        currentTime < sunset && currentTime > sunrise
+    }
+    
+    var isRain: Bool {
+        500..<600 ~= conditionId
+    }
+    
+    var isSnow: Bool {
+        600..<700 ~= conditionId
     }
 }

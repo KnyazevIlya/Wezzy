@@ -56,6 +56,10 @@
 		8454193E26DF78ED00480569 /* WeatherPreviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */; };
 		8454194626DFD82A00480569 /* partly-cloudy-day-rain.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8454194526DFD82A00480569 /* partly-cloudy-day-rain.svg */; };
 		8454195026E02CF000480569 /* LocationsPreviewViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454194F26E02CF000480569 /* LocationsPreviewViewController+Alert.swift */; };
+		8454195B26E0AC7200480569 /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8454195926E0AC7200480569 /* Rain.sks */; };
+		8454195C26E0AC7200480569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454195A26E0AC7200480569 /* Assets.xcassets */; };
+		8454196926E0AD5300480569 /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8454196826E0AD5300480569 /* Snow.sks */; };
+		8454198326E0D8DE00480569 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454198226E0D8DE00480569 /* DetailedViewController.swift */; };
 		89BAF5446C17AEB1A499273E /* Pods_Wezzy_WezzyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D41DD2D566F074C834ED75 /* Pods_Wezzy_WezzyUITests.framework */; };
 		C295AAC6DC67A5662D03D1AA /* Pods_WezzyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF63BA1BBEF9683261B54B8 /* Pods_WezzyTests.framework */; };
 		CA653FF2DF75005CEDFEFAE7 /* Pods_Wezzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DAF0962C0230FDF4D2B937 /* Pods_Wezzy.framework */; };
@@ -140,6 +144,10 @@
 		8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPreviewExtension.swift; sourceTree = "<group>"; };
 		8454194526DFD82A00480569 /* partly-cloudy-day-rain.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "partly-cloudy-day-rain.svg"; sourceTree = "<group>"; };
 		8454194F26E02CF000480569 /* LocationsPreviewViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationsPreviewViewController+Alert.swift"; sourceTree = "<group>"; };
+		8454195926E0AC7200480569 /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
+		8454195A26E0AC7200480569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8454196826E0AD5300480569 /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
+		8454198226E0D8DE00480569 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		95D41DD2D566F074C834ED75 /* Pods_Wezzy_WezzyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wezzy_WezzyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9951F2A0E676D98FA07EC74F /* Pods-WezzyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezzyTests.release.xcconfig"; path = "Target Support Files/Pods-WezzyTests/Pods-WezzyTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA7FC675257155E829C063B2 /* Pods-WezzyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezzyTests.debug.xcconfig"; path = "Target Support Files/Pods-WezzyTests/Pods-WezzyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -251,6 +259,7 @@
 			children = (
 				8454194E26E02CA700480569 /* LocationsPreview */,
 				8454186E26D7EDE200480569 /* SearchLocationViewController.swift */,
+				8454198226E0D8DE00480569 /* DetailedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -267,11 +276,39 @@
 		8454184F26D6B48200480569 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8454195826E0AB8E00480569 /* Sprites */,
+				8454195426E0AAF400480569 /* WeatherConditions */,
+				8454181826D679B100480569 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8454188126DA8A4100480569 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8454188226DA8C8800480569 /* RequestManager.swift */,
+				8454188C26DC334C00480569 /* WeatherConditionManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		8454194E26E02CA700480569 /* LocationsPreview */ = {
+			isa = PBXGroup;
+			children = (
+				8454181026D679AD00480569 /* LocationsPreviewViewController.swift */,
+				8454194F26E02CF000480569 /* LocationsPreviewViewController+Alert.swift */,
+			);
+			path = LocationsPreview;
+			sourceTree = "<group>";
+		};
+		8454195426E0AAF400480569 /* WeatherConditions */ = {
+			isa = PBXGroup;
+			children = (
+				8454194526DFD82A00480569 /* partly-cloudy-day-rain.svg */,
 				845418C426DE95D400480569 /* drizzle.svg */,
 				845418DE26DE963A00480569 /* sleet.svg */,
 				8454191426DE979700480569 /* not-available.svg */,
 				8454190126DE96DA00480569 /* clear-day.svg */,
-				8454194526DFD82A00480569 /* partly-cloudy-day-rain.svg */,
 				8454190026DE96DA00480569 /* clear-night.svg */,
 				845418DF26DE963A00480569 /* snow.svg */,
 				8454190B26DE974400480569 /* cloudy.svg */,
@@ -301,27 +338,18 @@
 				845418BC26DE957400480569 /* thunderstorms-night.svg */,
 				845418B526DE955400480569 /* thunderstorms-night-rain.svg */,
 				845418B026DE953C00480569 /* thunderstorms-day-rain.svg */,
-				8454181826D679B100480569 /* Assets.xcassets */,
 			);
-			path = Resources;
+			path = WeatherConditions;
 			sourceTree = "<group>";
 		};
-		8454188126DA8A4100480569 /* Managers */ = {
+		8454195826E0AB8E00480569 /* Sprites */ = {
 			isa = PBXGroup;
 			children = (
-				8454188226DA8C8800480569 /* RequestManager.swift */,
-				8454188C26DC334C00480569 /* WeatherConditionManager.swift */,
+				8454195926E0AC7200480569 /* Rain.sks */,
+				8454195A26E0AC7200480569 /* Assets.xcassets */,
+				8454196826E0AD5300480569 /* Snow.sks */,
 			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		8454194E26E02CA700480569 /* LocationsPreview */ = {
-			isa = PBXGroup;
-			children = (
-				8454181026D679AD00480569 /* LocationsPreviewViewController.swift */,
-				8454194F26E02CF000480569 /* LocationsPreviewViewController+Alert.swift */,
-			);
-			path = LocationsPreview;
+			path = Sprites;
 			sourceTree = "<group>";
 		};
 		B10FC6D230D5D1139E36FC3F /* Pods */ = {
@@ -457,6 +485,7 @@
 			files = (
 				845418F726DE96BF00480569 /* wind.svg in Resources */,
 				845418F126DE96BF00480569 /* smoke-particles.svg in Resources */,
+				8454195B26E0AC7200480569 /* Rain.sks in Resources */,
 				845418F226DE96BF00480569 /* smoke.svg in Resources */,
 				8454194626DFD82A00480569 /* partly-cloudy-day-rain.svg in Resources */,
 				8454190C26DE974400480569 /* partly-cloudy-day.svg in Resources */,
@@ -469,6 +498,7 @@
 				8454191026DE974400480569 /* cloudy.svg in Resources */,
 				845418FB26DE96BF00480569 /* mist.svg in Resources */,
 				845418CB26DE95D400480569 /* partly-cloudy-day-drizzle.svg in Resources */,
+				8454196926E0AD5300480569 /* Snow.sks in Resources */,
 				845418BE26DE957400480569 /* thunderstorms-day.svg in Resources */,
 				845418CC26DE95D400480569 /* partly-cloudy-night-drizzle.svg in Resources */,
 				845418C926DE95D400480569 /* drizzle.svg in Resources */,
@@ -476,6 +506,7 @@
 				845418D326DE960400480569 /* partly-cloudy-night-rain.svg in Resources */,
 				8454191526DE979700480569 /* not-available.svg in Resources */,
 				8454190E26DE974400480569 /* overcast-night.svg in Resources */,
+				8454195C26E0AC7200480569 /* Assets.xcassets in Resources */,
 				845418FA26DE96BF00480569 /* haze-day.svg in Resources */,
 				845418F426DE96BF00480569 /* haze-night.svg in Resources */,
 				845418B626DE955400480569 /* thunderstorms-night-rain.svg in Resources */,
@@ -620,6 +651,7 @@
 			files = (
 				8454188826DA9BAC00480569 /* CurrentWeatherModel.swift in Sources */,
 				8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */,
+				8454198326E0D8DE00480569 /* DetailedViewController.swift in Sources */,
 				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
 				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
 				8454186F26D7EDE200480569 /* SearchLocationViewController.swift in Sources */,
