@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Pink_sky.jpg",
+      "filename" : "testImage-1.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "testImage.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "testImage-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

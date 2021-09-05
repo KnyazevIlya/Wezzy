@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8440E6B326E2C838002F5AAC /* DetailedHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */; };
 		8454180D26D679AD00480569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180C26D679AD00480569 /* AppDelegate.swift */; };
 		8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454181026D679AD00480569 /* LocationsPreviewViewController.swift */; };
 		8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8454181526D679AD00480569 /* Wezzy.xcdatamodeld */; };
@@ -60,6 +61,9 @@
 		8454195C26E0AC7200480569 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8454195A26E0AC7200480569 /* Assets.xcassets */; };
 		8454196926E0AD5300480569 /* Snow.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8454196826E0AD5300480569 /* Snow.sks */; };
 		8454198326E0D8DE00480569 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454198226E0D8DE00480569 /* DetailedViewController.swift */; };
+		84699DBF26E42C150033C864 /* DetailedViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */; };
+		84699DD726E4E17A0033C864 /* UIView + Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699DD626E4E17A0033C864 /* UIView + Blur.swift */; };
+		84699DE726E5047B0033C864 /* ImageProcessingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699DE626E5047B0033C864 /* ImageProcessingManager.swift */; };
 		89BAF5446C17AEB1A499273E /* Pods_Wezzy_WezzyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D41DD2D566F074C834ED75 /* Pods_Wezzy_WezzyUITests.framework */; };
 		C295AAC6DC67A5662D03D1AA /* Pods_WezzyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF63BA1BBEF9683261B54B8 /* Pods_WezzyTests.framework */; };
 		CA653FF2DF75005CEDFEFAE7 /* Pods_Wezzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DAF0962C0230FDF4D2B937 /* Pods_Wezzy.framework */; };
@@ -89,6 +93,8 @@
 		447092E7AD956BF232D12C84 /* Pods-Wezzy-WezzyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wezzy-WezzyUITests.release.xcconfig"; path = "Target Support Files/Pods-Wezzy-WezzyUITests/Pods-Wezzy-WezzyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67DAF0962C0230FDF4D2B937 /* Pods_Wezzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wezzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74872F6A06C255857EA13A33 /* Pods-Wezzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wezzy.release.xcconfig"; path = "Target Support Files/Pods-Wezzy/Pods-Wezzy.release.xcconfig"; sourceTree = "<group>"; };
+		8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewControllerExtension.swift; sourceTree = "<group>"; };
+		8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHeadViewController.swift; sourceTree = "<group>"; };
 		8454180926D679AD00480569 /* Wezzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454180C26D679AD00480569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8454181026D679AD00480569 /* LocationsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPreviewViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 		8454195A26E0AC7200480569 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8454196826E0AD5300480569 /* Snow.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Snow.sks; sourceTree = "<group>"; };
 		8454198226E0D8DE00480569 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		84699DD626E4E17A0033C864 /* UIView + Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Blur.swift"; sourceTree = "<group>"; };
+		84699DE626E5047B0033C864 /* ImageProcessingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingManager.swift; sourceTree = "<group>"; };
 		95D41DD2D566F074C834ED75 /* Pods_Wezzy_WezzyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wezzy_WezzyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9951F2A0E676D98FA07EC74F /* Pods-WezzyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezzyTests.release.xcconfig"; path = "Target Support Files/Pods-WezzyTests/Pods-WezzyTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA7FC675257155E829C063B2 /* Pods-WezzyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezzyTests.debug.xcconfig"; path = "Target Support Files/Pods-WezzyTests/Pods-WezzyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -181,6 +189,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8440E6A526E2C61C002F5AAC /* Detailed */ = {
+			isa = PBXGroup;
+			children = (
+				8454198226E0D8DE00480569 /* DetailedViewController.swift */,
+				8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */,
+			);
+			path = Detailed;
+			sourceTree = "<group>";
+		};
+		8440E6A626E2C676002F5AAC /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */,
+				8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */,
+				84699DD626E4E17A0033C864 /* UIView + Blur.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8454180026D679AD00480569 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +233,7 @@
 		8454180B26D679AD00480569 /* Wezzy */ = {
 			isa = PBXGroup;
 			children = (
+				8440E6A626E2C676002F5AAC /* Extensions */,
 				8454188126DA8A4100480569 /* Managers */,
 				8454184B26D6B3AE00480569 /* Model */,
 				8454184C26D6B3C800480569 /* View */,
@@ -239,7 +267,6 @@
 			children = (
 				8454181526D679AD00480569 /* Wezzy.xcdatamodeld */,
 				8454188726DA9BAC00480569 /* CurrentWeatherModel.swift */,
-				8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -259,7 +286,7 @@
 			children = (
 				8454194E26E02CA700480569 /* LocationsPreview */,
 				8454186E26D7EDE200480569 /* SearchLocationViewController.swift */,
-				8454198226E0D8DE00480569 /* DetailedViewController.swift */,
+				8440E6A526E2C61C002F5AAC /* Detailed */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -288,6 +315,7 @@
 			children = (
 				8454188226DA8C8800480569 /* RequestManager.swift */,
 				8454188C26DC334C00480569 /* WeatherConditionManager.swift */,
+				84699DE626E5047B0033C864 /* ImageProcessingManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -650,12 +678,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8454188826DA9BAC00480569 /* CurrentWeatherModel.swift in Sources */,
+				8440E6B326E2C838002F5AAC /* DetailedHeadViewController.swift in Sources */,
 				8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */,
 				8454198326E0D8DE00480569 /* DetailedViewController.swift in Sources */,
 				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
 				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
 				8454186F26D7EDE200480569 /* SearchLocationViewController.swift in Sources */,
+				84699DD726E4E17A0033C864 /* UIView + Blur.swift in Sources */,
+				84699DE726E5047B0033C864 /* ImageProcessingManager.swift in Sources */,
 				8454188326DA8C8800480569 /* RequestManager.swift in Sources */,
+				84699DBF26E42C150033C864 /* DetailedViewControllerExtension.swift in Sources */,
 				8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */,
 				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
 				8454193E26DF78ED00480569 /* WeatherPreviewExtension.swift in Sources */,

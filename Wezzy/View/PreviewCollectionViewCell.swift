@@ -15,7 +15,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
     let backgroundImage: UIImageView = {
         let bg = UIImageView()
         bg.translatesAutoresizingMaskIntoConstraints = false
-        bg.contentMode = .scaleToFill
+        bg.contentMode = .scaleAspectFill
         bg.clipsToBounds = true
         bg.alpha = 0.8
         return bg
