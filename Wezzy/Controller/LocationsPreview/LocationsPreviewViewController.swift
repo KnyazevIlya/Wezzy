@@ -25,7 +25,7 @@ class LocationsPreviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Loccations"
+        title = "Locations"
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemGray6
         configureCollectionView()

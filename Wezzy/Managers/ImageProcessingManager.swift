@@ -35,7 +35,7 @@ class ImageProcessingManager {
         
         for indexV in stride(from: 0, to: image.height, by: 2) {
             for indexH in stride(from: 1, to: image.width, by: 2) {
-                let pixelData = ((Int(image.width) * indexH) + indexV) * numberOfComponents
+                let pixelData = ((Int(image.width) * indexV) + indexH) * numberOfComponents
                 rChanel += Int(data[pixelData])
                 gChanel += Int(data[pixelData + 1])
                 bChanel += Int(data[pixelData + 2])

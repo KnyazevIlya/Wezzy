@@ -64,6 +64,7 @@
 		84699DBF26E42C150033C864 /* DetailedViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */; };
 		84699DD726E4E17A0033C864 /* UIView + Blur.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699DD626E4E17A0033C864 /* UIView + Blur.swift */; };
 		84699DE726E5047B0033C864 /* ImageProcessingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699DE626E5047B0033C864 /* ImageProcessingManager.swift */; };
+		84699DF626E60A5C0033C864 /* UIView+RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84699DF526E60A5C0033C864 /* UIView+RoundedCorners.swift */; };
 		89BAF5446C17AEB1A499273E /* Pods_Wezzy_WezzyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95D41DD2D566F074C834ED75 /* Pods_Wezzy_WezzyUITests.framework */; };
 		C295AAC6DC67A5662D03D1AA /* Pods_WezzyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FF63BA1BBEF9683261B54B8 /* Pods_WezzyTests.framework */; };
 		CA653FF2DF75005CEDFEFAE7 /* Pods_Wezzy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 67DAF0962C0230FDF4D2B937 /* Pods_Wezzy.framework */; };
@@ -156,6 +157,7 @@
 		8454198226E0D8DE00480569 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
 		84699DD626E4E17A0033C864 /* UIView + Blur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Blur.swift"; sourceTree = "<group>"; };
 		84699DE626E5047B0033C864 /* ImageProcessingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProcessingManager.swift; sourceTree = "<group>"; };
+		84699DF526E60A5C0033C864 /* UIView+RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+RoundedCorners.swift"; sourceTree = "<group>"; };
 		95D41DD2D566F074C834ED75 /* Pods_Wezzy_WezzyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wezzy_WezzyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9951F2A0E676D98FA07EC74F /* Pods-WezzyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezzyTests.release.xcconfig"; path = "Target Support Files/Pods-WezzyTests/Pods-WezzyTests.release.xcconfig"; sourceTree = "<group>"; };
 		AA7FC675257155E829C063B2 /* Pods-WezzyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WezzyTests.debug.xcconfig"; path = "Target Support Files/Pods-WezzyTests/Pods-WezzyTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */,
 				8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */,
 				84699DD626E4E17A0033C864 /* UIView + Blur.swift */,
+				84699DF526E60A5C0033C864 /* UIView+RoundedCorners.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */,
 				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
 				8454193E26DF78ED00480569 /* WeatherPreviewExtension.swift in Sources */,
+				84699DF626E60A5C0033C864 /* UIView+RoundedCorners.swift in Sources */,
 				8454195026E02CF000480569 /* LocationsPreviewViewController+Alert.swift in Sources */,
 				8454188D26DC334C00480569 /* WeatherConditionManager.swift in Sources */,
 			);

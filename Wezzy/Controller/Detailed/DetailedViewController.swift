@@ -129,6 +129,8 @@ class DetailedViewController: UIViewController {
     }
     
     private func addScrollChildren() {
-        add(DetailedHeadViewController())
+        let head = DetailedHeadViewController()
+        head.preview = preview
+        add(head)
     }
 }
