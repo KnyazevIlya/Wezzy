@@ -14,7 +14,7 @@ class DetailedHeadViewController: UIViewController {
     
     //MARK: - private properties
     private let currentWeatherViewHeight: CGFloat = 100
-    private let peakTemperatureWidth: CGFloat = 90
+    private let peakTemperatureWidth: CGFloat = 70
     private let inset: CGFloat = 20
     private let innerInset: CGFloat = 10
     private let peakTemperatureVerticalInset: CGFloat = 15
@@ -50,7 +50,7 @@ class DetailedHeadViewController: UIViewController {
     private lazy var locationNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 32, weight: .thin)
+        label.font = UIFont.systemFont(ofSize: 48, weight: .thin)
         label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
@@ -66,21 +66,21 @@ class DetailedHeadViewController: UIViewController {
     private lazy var maxTemperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .ultraLight)
         return label
     }()
     
     private lazy var minTemperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .ultraLight)
         return label
     }()
     
     private lazy var peakTemperatureSeparator: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 24, weight: .ultraLight)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
         return label
     }()
     
