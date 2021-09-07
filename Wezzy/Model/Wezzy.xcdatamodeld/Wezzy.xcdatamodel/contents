@@ -1,19 +1,30 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="WeatherPreview" representedClassName="WeatherPreview" syncable="YES" codeGenerationType="class">
+    <entity name="CurrentWeather" representedClassName="CurrentWeather" syncable="YES" codeGenerationType="class">
+        <attribute name="attribute" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="conditionId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="currentTime" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="maxTemperature" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="minTemperature" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="sunrise" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sunset" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="temperature" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="current" inverseEntity="Location"/>
+    </entity>
+    <entity name="DailyWeather" representedClassName="DailyWeather" syncable="YES" codeGenerationType="class">
+        <relationship name="location" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Location" inverseName="daily" inverseEntity="Location"/>
+    </entity>
+    <entity name="Location" representedClassName="Location" syncable="YES" codeGenerationType="class">
+        <attribute name="lastUpdate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="latitude" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="longtitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="current" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CurrentWeather" inverseName="location" inverseEntity="CurrentWeather"/>
+        <relationship name="daily" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DailyWeather" inverseName="location" inverseEntity="DailyWeather"/>
     </entity>
     <elements>
-        <element name="WeatherPreview" positionX="-54" positionY="-9" width="128" height="194"/>
+        <element name="CurrentWeather" positionX="-305" positionY="122" width="128" height="178"/>
+        <element name="DailyWeather" positionX="50" positionY="129" width="128" height="58"/>
+        <element name="Location" positionX="-147" positionY="-72" width="128" height="133"/>
     </elements>
 </model>

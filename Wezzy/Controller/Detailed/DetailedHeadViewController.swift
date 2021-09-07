@@ -9,7 +9,7 @@ import UIKit
 
 class DetailedHeadViewController: UIViewController {
     //MARK: - public properties
-    var preview: WeatherPreview?
+    var location: Location?
     
     
     //MARK: - private properties
@@ -100,13 +100,14 @@ class DetailedHeadViewController: UIViewController {
     
     //MARK: - configurations
     private func configureCurrentWeatherView() {
-        guard let preview = preview else { return }
+        guard let location = location,
+              let current = location.current else { return }
         
         view.addSubview(currentWeatherBackgroundView)
         currentWeatherBackgroundView.addSubview(temperatureLabel)
         currentWeatherBackgroundView.addSubview(locationNameLabel)
-        temperatureLabel.text = "\(preview.temperature)℃"
-        locationNameLabel.text = preview.name
+        temperatureLabel.text = "\(current.temperature)℃"
+        locationNameLabel.text = location.name
         
         setTextColorSchemeFromPreview()
     }
@@ -122,9 +123,12 @@ class DetailedHeadViewController: UIViewController {
         peakTemperatureSeparator.textAlignment = .center
         minTemperatureLabel.textAlignment = .right
         
-        maxTemperatureLabel.text = "21℃"
+        guard let location = location,
+              let current = location.current else { return }
+        
+        maxTemperatureLabel.text = "\(current.maxTemperature)℃"
         peakTemperatureSeparator.text = "/"
-        minTemperatureLabel.text = "17℃"
+        minTemperatureLabel.text = "\(current.minTemperature)℃"
     }
     //MARK: - setup layout
     private func setupCurrentWeatherViewConstraints() {

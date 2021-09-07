@@ -8,8 +8,8 @@
 import UIKit
 import MapKit
 
-protocol ManagePreviewDelegate: AnyObject {
-    func addPreview(mapItem: MKMapItem)
+protocol ManageLocationDelegate: AnyObject {
+    func addLocation(mapItem: MKMapItem)
 }
 
 class LocationsPreviewViewController: UIViewController {
@@ -18,7 +18,7 @@ class LocationsPreviewViewController: UIViewController {
     var collectionView: UICollectionView!
     
     //MARK: - private properties
-    private var previews = [WeatherPreview]()
+    private var locations = [Location]()
     private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //MARK: - life cycle
@@ -29,7 +29,7 @@ class LocationsPreviewViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         view.backgroundColor = .systemGray6
         configureCollectionView()
-        updatePreviews()
+        updateLocations()
     }
 
     //MARK: - layout configuration
@@ -50,9 +50,9 @@ class LocationsPreviewViewController: UIViewController {
     }
     
     //MARK: - private methods
-    private func createURLForPreview(with coordinates: CLLocationCoordinate2D, isCelsius: Bool) -> URL {
+    private func createURLForLocation(with coordinates: CLLocationCoordinate2D, isCelsius: Bool) -> URL {
         let units = isCelsius ? "metric" : "imperial"
-        let urlString = "https://api.openweathermap.org/data/2.5/onecall?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&units=\(units)&exclude=hourly,daily&appid=" + ProcessInfo.processInfo.environment["APIKey"]!
+        let urlString = "https://api.openweathermap.org/data/2.5/onecall?lat=\(coordinates.latitude)&lon=\(coordinates.longitude)&units=\(units)&exclude=minutely&appid=" + ProcessInfo.processInfo.environment["APIKey"]!
         let url = URL(string: urlString)!
         return url
     }
@@ -66,46 +66,46 @@ class LocationsPreviewViewController: UIViewController {
         }
     }
     
-    private func fetchPreviews(completion: ([WeatherPreview]) -> Void) {
+    private func fetchLocations(completion: ([Location]) -> Void) {
         do {
-            let results = try context.fetch(WeatherPreview.fetchRequest()) as! [WeatherPreview]
+            let results = try context.fetch(Location.fetchRequest()) as! [Location]
             completion(results)
         } catch {
             fatalError("Unable to fetch the locations from the persistant storage, try to launch the app again!")
         }
     }
     
-    private func addPreview(withName name: String, data: CWRoot, coordinates: CLLocationCoordinate2D) {
-        let newPreview = WeatherPreview(context: context)
+    private func addLocation(withName name: String, data: WeatherRoot, coordinates: CLLocationCoordinate2D) {
+        let newLocation = Location(context: context)
+        let currentWeather = CurrentWeather(context: context)
         
-        newPreview.name = name
-        newPreview.lat = coordinates.latitude
-        newPreview.lon = coordinates.longitude
-        newPreview.temperature = Int64(data.current.temp)
-        newPreview.currentTime = Int64(data.current.dt)
-        newPreview.sunset = Int64(data.current.sunset)
-        newPreview.sunrise = Int64(data.current.sunrise)
-        newPreview.conditionId = Int64(data.current.weather[0].id)
-        newPreview.lastUpdate = Date()
+        newLocation.current = currentWeather
+        
+        newLocation.name = name
+        newLocation.latitude = coordinates.latitude
+        newLocation.longtitude = coordinates.longitude
+        newLocation.lastUpdate = Date()
+        
+        updateLocation(location: newLocation, data: data)
+    }
+    
+    private func updateLocation(location: Location, data: WeatherRoot) {
+        
+        location.lastUpdate = Date()
+        
+        location.current?.temperature = Int64(data.current.temp)
+        location.current?.currentTime = Int64(data.current.dt)
+        location.current?.sunrise = Int64(data.current.sunrise)
+        location.current?.sunset = Int64(data.current.sunset)
+        location.current?.conditionId = Int64(data.current.weather[0].id)
         
         updateContext()
     }
     
-    private func updatePreview(preview: WeatherPreview, data: CWRoot) {
-        preview.lastUpdate = Date()
-        preview.temperature = Int64(data.current.temp)
-        preview.currentTime = Int64(data.current.dt)
-        preview.sunrise = Int64(data.current.sunrise)
-        preview.sunset = Int64(data.current.sunset)
-        preview.conditionId = Int64(data.current.weather[0].id)
-        
-        updateContext()
-    }
-    
-    private func updatePreviews() {
+    private func updateLocations() {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            self?.fetchPreviews { (previews) in
-                self?.previews = previews
+            self?.fetchLocations { (locations) in
+                self?.locations = locations
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
@@ -133,13 +133,13 @@ extension LocationsPreviewViewController: UICollectionViewDelegateFlowLayout {
 
 extension LocationsPreviewViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if indexPath.item == previews.count {
+        if indexPath.item == locations.count {
             let vc = SearchLocationViewController()
             vc.delegate = self
             present(vc, animated: true)
         } else {
             let vc = DetailedViewController()
-            vc.preview = previews[indexPath.item]
+            vc.location = locations[indexPath.item]
             navigationController?.pushViewController(vc, animated: true)
         }
     }
@@ -148,35 +148,36 @@ extension LocationsPreviewViewController: UICollectionViewDelegate {
 extension LocationsPreviewViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         //the number of previews and an extra cell for addPreviewv
-        return previews.count + 1
+        return locations.count + 1
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if indexPath.item == previews.count {
+        if indexPath.item == locations.count {
             // the last cell is for addPreview
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AddPreviewCollectionViewCell.reuseId, for: indexPath) as! AddPreviewCollectionViewCell
             return cell
         } else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PreviewCollectionViewCell.reuseId, for: indexPath) as! PreviewCollectionViewCell
-            let preview = previews[indexPath.item]
+            let location = locations[indexPath.item]
             
-            let differenceComponents = Calendar.current.dateComponents([.minute], from: preview.lastUpdate!, to: Date())
+            let differenceComponents = Calendar.current.dateComponents([.minute], from: location.lastUpdate!, to: Date())
             if differenceComponents.minute! > 30 {
-                let coords = CLLocationCoordinate2D(latitude: preview.lat, longitude: preview.lon)
-                let url = createURLForPreview(with: coords, isCelsius: true)
-                RequestManager.shared.fetchJSON(withURL: url) { [weak self] (result: Result<CWRoot, Error>) in
+                let coords = CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longtitude)
+                let url = createURLForLocation(with: coords, isCelsius: true)
+                RequestManager.shared.fetchJSON(withURL: url) { [weak self] (result: Result<WeatherRoot, Error>) in
                     switch result {
                     case .failure(let error):
                         print(error.localizedDescription)
                     case .success(let model):
-                        self?.updatePreview(preview: preview, data: model)
+                        self?.updateLocation(location: location, data: model)
                     }
                 }
             }
             //TODO: move this logic to cell
-            let id = preview.conditionId
+            
+            let id = location.current?.conditionId ?? 0
             if let conditionNameTuple = WeatherConditionManager.conditions[Int(id)] {
-                let daytimeCode = preview.isDay ? 0 : 1
+                let daytimeCode = location.current?.isDay ?? true ? 0 : 1
                 let conditionName = conditionNameTuple[daytimeCode]
                 cell.configureForeground(svgName: conditionName)
             } else {
@@ -184,25 +185,29 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             }
             
             cell.backgroundImage.image = #imageLiteral(resourceName: "testImage")
-            cell.nameLabel.text = preview.name
-            cell.temperatureLabel.text = "\(preview.temperature)℃"
+            cell.nameLabel.text = location.name
+            
+            if let current = location.current {
+                cell.temperatureLabel.text = "\(current.temperature)℃"
+            }
+            
             return cell
         }
     }
 }
 
 //MARK: - AddPreviewDelegate
-extension LocationsPreviewViewController: ManagePreviewDelegate {
-    func addPreview(mapItem: MKMapItem) {
+extension LocationsPreviewViewController: ManageLocationDelegate {
+    func addLocation(mapItem: MKMapItem) {
         
-        if previews.contains(where: { $0.name == mapItem.name }) {
+        if locations.contains(where: { $0.name == mapItem.name }) {
             dismiss(animated: true)
             showAlert(title: "This location has already been added to your list", message: nil)
         } else {
-            let url = createURLForPreview(with: mapItem.placemark.coordinate, isCelsius: true)
+            let url = createURLForLocation(with: mapItem.placemark.coordinate, isCelsius: true)
             DispatchQueue.global().async {
                 RequestManager.shared.fetchJSON(withURL: url) {
-                    [weak self] (result: Result<CWRoot, Error>) in
+                    [weak self] (result: Result<WeatherRoot, Error>) in
                     
                     switch result {
                     case .failure(let error):
@@ -213,8 +218,8 @@ extension LocationsPreviewViewController: ManagePreviewDelegate {
                         }
                         
                     case .success(let model):
-                        self?.addPreview(withName: mapItem.name!, data: model, coordinates: mapItem.placemark.coordinate)
-                        self?.updatePreviews()
+                        self?.addLocation(withName: mapItem.name!, data: model, coordinates: mapItem.placemark.coordinate)
+                        self?.updateLocations()
                     }
                 }
             }

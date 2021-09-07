@@ -12,7 +12,7 @@ class SearchLocationViewController: UIViewController {
 
     //MARK: - public properties
     
-    weak var delegate: ManagePreviewDelegate?
+    weak var delegate: ManageLocationDelegate?
     
     //MARK: - private properties
     private let mainColor = UIColor.systemGray5
@@ -137,7 +137,7 @@ extension SearchLocationViewController: UITableViewDelegate, UITableViewDataSour
                 } else {
                     guard let response = response else { return }
                     
-                    self?.delegate?.addPreview(mapItem: response.mapItems[0])
+                    self?.delegate?.addLocation(mapItem: response.mapItems[0])
                 }
             }
         }

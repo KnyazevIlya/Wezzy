@@ -10,7 +10,7 @@ import SpriteKit
 
 class DetailedViewController: UIViewController {
 
-    var preview: WeatherPreview?
+    var location: Location?
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -93,12 +93,12 @@ class DetailedViewController: UIViewController {
     }
     
     private func addSprite() {
-        guard let preview = preview else { return }
+        guard let preview = location else { return }
         var conditionSpriteName: String? = nil
         
-        if preview.isRain {
+        if preview.current?.isRain ?? false {
             conditionSpriteName = "Rain.sks"
-        } else if preview.isSnow {
+        } else if preview.current?.isSnow ?? false {
             conditionSpriteName = "Snow.sks"
         }
         
@@ -130,7 +130,7 @@ class DetailedViewController: UIViewController {
     
     private func addScrollChildren() {
         let head = DetailedHeadViewController()
-        head.preview = preview
+        head.location = location
         add(head)
     }
 }
