@@ -26,7 +26,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 36)
+        label.font = UIFont.systemFont(ofSize: 36, weight: .thin)
         label.textColor = .white
         return label
     }()
@@ -36,7 +36,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
         label.adjustsFontSizeToFitWidth = true
-        label.font = UIFont.systemFont(ofSize: 48)
+        label.font = UIFont.systemFont(ofSize: 48, weight: .thin)
         label.textColor = .white
         return label
     }()
