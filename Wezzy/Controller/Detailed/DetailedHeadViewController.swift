@@ -123,12 +123,12 @@ class DetailedHeadViewController: UIViewController {
         peakTemperatureSeparator.textAlignment = .center
         minTemperatureLabel.textAlignment = .right
         
-        guard let location = location,
-              let current = location.current else { return }
+        guard let location = location else { return }
+        let daily = location.dailyArray
         
-        maxTemperatureLabel.text = "\(current.maxTemperature)℃"
+        maxTemperatureLabel.text = "\(daily[0].maxTemperature)℃"
         peakTemperatureSeparator.text = "/"
-        minTemperatureLabel.text = "\(current.minTemperature)℃"
+        minTemperatureLabel.text = "\(daily[0].minTemperature)℃"
     }
     //MARK: - setup layout
     private func setupCurrentWeatherViewConstraints() {

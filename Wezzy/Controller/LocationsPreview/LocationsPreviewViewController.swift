@@ -99,6 +99,16 @@ class LocationsPreviewViewController: UIViewController {
         location.current?.sunset = Int64(data.current.sunset)
         location.current?.conditionId = Int64(data.current.weather[0].id)
         
+        for (index, day) in data.daily.enumerated() {
+            let dailyWeather = DailyWeather(context: context)
+            
+            dailyWeather.dayNumber = Int64(index)
+            dailyWeather.minTemperature = Int64(day.temp.min)
+            dailyWeather.maxTemperature = Int64(day.temp.max)
+            
+            location.addToDaily(dailyWeather)
+        }
+        
         updateContext()
     }
     

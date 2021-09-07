@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		840A46BB26E7B19F001570CD /* Location+CoreDataClass copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A46B726E7B19F001570CD /* Location+CoreDataClass copy.swift */; };
+		840A46BD26E7B19F001570CD /* Location+CoreDataProperties copy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A46B926E7B19F001570CD /* Location+CoreDataProperties copy.swift */; };
+		840A46DF26E7B22D001570CD /* CurrentWeather+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A46DD26E7B22D001570CD /* CurrentWeather+CoreDataClass.swift */; };
+		840A46E026E7B22D001570CD /* CurrentWeather+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A46DE26E7B22D001570CD /* CurrentWeather+CoreDataProperties.swift */; };
 		8440E6B326E2C838002F5AAC /* DetailedHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */; };
 		8454180D26D679AD00480569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180C26D679AD00480569 /* AppDelegate.swift */; };
 		8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454181026D679AD00480569 /* LocationsPreviewViewController.swift */; };
@@ -54,7 +58,6 @@
 		8454190F26DE974400480569 /* partly-cloudy-night.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8454190A26DE974400480569 /* partly-cloudy-night.svg */; };
 		8454191026DE974400480569 /* cloudy.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8454190B26DE974400480569 /* cloudy.svg */; };
 		8454191526DE979700480569 /* not-available.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8454191426DE979700480569 /* not-available.svg */; };
-		8454193E26DF78ED00480569 /* WeatherPreviewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */; };
 		8454194626DFD82A00480569 /* partly-cloudy-day-rain.svg in Resources */ = {isa = PBXBuildFile; fileRef = 8454194526DFD82A00480569 /* partly-cloudy-day-rain.svg */; };
 		8454195026E02CF000480569 /* LocationsPreviewViewController+Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454194F26E02CF000480569 /* LocationsPreviewViewController+Alert.swift */; };
 		8454195B26E0AC7200480569 /* Rain.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8454195926E0AC7200480569 /* Rain.sks */; };
@@ -96,6 +99,10 @@
 		447092E7AD956BF232D12C84 /* Pods-Wezzy-WezzyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wezzy-WezzyUITests.release.xcconfig"; path = "Target Support Files/Pods-Wezzy-WezzyUITests/Pods-Wezzy-WezzyUITests.release.xcconfig"; sourceTree = "<group>"; };
 		67DAF0962C0230FDF4D2B937 /* Pods_Wezzy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wezzy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		74872F6A06C255857EA13A33 /* Pods-Wezzy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wezzy.release.xcconfig"; path = "Target Support Files/Pods-Wezzy/Pods-Wezzy.release.xcconfig"; sourceTree = "<group>"; };
+		840A46B726E7B19F001570CD /* Location+CoreDataClass copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass copy.swift"; sourceTree = "<group>"; };
+		840A46B926E7B19F001570CD /* Location+CoreDataProperties copy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties copy.swift"; sourceTree = "<group>"; };
+		840A46DD26E7B22D001570CD /* CurrentWeather+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentWeather+CoreDataClass.swift"; path = "/Users/admin/Desktop/Wezzy/Wezzy/Model/CoreDataManagedObjects/CurrentWeather+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		840A46DE26E7B22D001570CD /* CurrentWeather+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "CurrentWeather+CoreDataProperties.swift"; path = "/Users/admin/Desktop/Wezzy/Wezzy/Model/CoreDataManagedObjects/CurrentWeather+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewControllerExtension.swift; sourceTree = "<group>"; };
 		8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHeadViewController.swift; sourceTree = "<group>"; };
 		8454180926D679AD00480569 /* Wezzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +157,6 @@
 		8454190A26DE974400480569 /* partly-cloudy-night.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "partly-cloudy-night.svg"; sourceTree = "<group>"; };
 		8454190B26DE974400480569 /* cloudy.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = cloudy.svg; sourceTree = "<group>"; };
 		8454191426DE979700480569 /* not-available.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "not-available.svg"; sourceTree = "<group>"; };
-		8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPreviewExtension.swift; sourceTree = "<group>"; };
 		8454194526DFD82A00480569 /* partly-cloudy-day-rain.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "partly-cloudy-day-rain.svg"; sourceTree = "<group>"; };
 		8454194F26E02CF000480569 /* LocationsPreviewViewController+Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationsPreviewViewController+Alert.swift"; sourceTree = "<group>"; };
 		8454195926E0AC7200480569 /* Rain.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Rain.sks; sourceTree = "<group>"; };
@@ -195,6 +201,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		840A465D26E7A711001570CD /* CoreDataManagedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				840A46DD26E7B22D001570CD /* CurrentWeather+CoreDataClass.swift */,
+				840A46DE26E7B22D001570CD /* CurrentWeather+CoreDataProperties.swift */,
+				840A46B926E7B19F001570CD /* Location+CoreDataProperties copy.swift */,
+				840A46B726E7B19F001570CD /* Location+CoreDataClass copy.swift */,
+			);
+			path = CoreDataManagedObjects;
+			sourceTree = "<group>";
+		};
 		8440E6A526E2C61C002F5AAC /* Detailed */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,7 +224,6 @@
 		8440E6A626E2C676002F5AAC /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8454193D26DF78ED00480569 /* WeatherPreviewExtension.swift */,
 				8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */,
 				84699DD626E4E17A0033C864 /* UIView + Blur.swift */,
 				84699DF526E60A5C0033C864 /* UIView+RoundedCorners.swift */,
@@ -272,6 +288,7 @@
 		8454184B26D6B3AE00480569 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				840A465D26E7A711001570CD /* CoreDataManagedObjects */,
 				8454181526D679AD00480569 /* Wezzy.xcdatamodeld */,
 				8454188726DA9BAC00480569 /* CurrentWeatherModel.swift */,
 				84699E0526E62F830033C864 /* DailyWeatherModel.swift */,
@@ -686,6 +703,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				840A46BB26E7B19F001570CD /* Location+CoreDataClass copy.swift in Sources */,
 				8454188826DA9BAC00480569 /* CurrentWeatherModel.swift in Sources */,
 				8440E6B326E2C838002F5AAC /* DetailedHeadViewController.swift in Sources */,
 				84699E0626E62F830033C864 /* DailyWeatherModel.swift in Sources */,
@@ -693,16 +711,18 @@
 				8454198326E0D8DE00480569 /* DetailedViewController.swift in Sources */,
 				8454180D26D679AD00480569 /* AppDelegate.swift in Sources */,
 				8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */,
+				840A46E026E7B22D001570CD /* CurrentWeather+CoreDataProperties.swift in Sources */,
 				8454186F26D7EDE200480569 /* SearchLocationViewController.swift in Sources */,
 				84699DD726E4E17A0033C864 /* UIView + Blur.swift in Sources */,
 				84699DE726E5047B0033C864 /* ImageProcessingManager.swift in Sources */,
+				840A46DF26E7B22D001570CD /* CurrentWeather+CoreDataClass.swift in Sources */,
 				8454188326DA8C8800480569 /* RequestManager.swift in Sources */,
 				84699DBF26E42C150033C864 /* DetailedViewControllerExtension.swift in Sources */,
 				8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */,
 				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
-				8454193E26DF78ED00480569 /* WeatherPreviewExtension.swift in Sources */,
 				84699DF626E60A5C0033C864 /* UIView+RoundedCorners.swift in Sources */,
 				8454195026E02CF000480569 /* LocationsPreviewViewController+Alert.swift in Sources */,
+				840A46BD26E7B19F001570CD /* Location+CoreDataProperties copy.swift in Sources */,
 				84699E0B26E630160033C864 /* WeatherRoot.swift in Sources */,
 				8454188D26DC334C00480569 /* WeatherConditionManager.swift in Sources */,
 			);
