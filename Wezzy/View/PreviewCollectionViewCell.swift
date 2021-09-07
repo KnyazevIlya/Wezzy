@@ -49,7 +49,6 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         backgroundColor = .systemGray4
         
         configureBackgroundImage()
-
         configureNameLabel()
         configureTemperatureLabel()
     }

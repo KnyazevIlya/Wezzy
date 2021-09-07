@@ -132,5 +132,8 @@ class DetailedViewController: UIViewController {
         let head = DetailedHeadViewController()
         head.location = location
         add(head)
+        
+        let current = DetailedCurrentWeatherViewController()
+        add(current)
     }
 }

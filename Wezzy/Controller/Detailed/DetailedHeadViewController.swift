@@ -14,7 +14,7 @@ class DetailedHeadViewController: UIViewController {
     
     //MARK: - private properties
     private let currentWeatherViewHeight: CGFloat = 100
-    private let peakTemperatureWidth: CGFloat = 70
+    private let peakTemperatureWidth: CGFloat = 60
     private let inset: CGFloat = 20
     private let innerInset: CGFloat = 10
     private let peakTemperatureVerticalInset: CGFloat = 15
@@ -52,7 +52,6 @@ class DetailedHeadViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 48, weight: .thin)
         label.textAlignment = .center
-        label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         return label
     }()
@@ -66,21 +65,21 @@ class DetailedHeadViewController: UIViewController {
     private lazy var maxTemperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14, weight: .ultraLight)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
         return label
     }()
     
     private lazy var minTemperatureLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 14, weight: .ultraLight)
+        label.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
         return label
     }()
     
     private lazy var peakTemperatureSeparator: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 18, weight: .ultraLight)
+        label.font = UIFont.systemFont(ofSize: 24, weight: .ultraLight)
         return label
     }()
     
@@ -126,9 +125,9 @@ class DetailedHeadViewController: UIViewController {
         guard let location = location else { return }
         let daily = location.dailyArray
         
-        maxTemperatureLabel.text = "\(daily[0].maxTemperature)℃"
+        maxTemperatureLabel.text = "\(daily[0].maxTemperature)°"
         peakTemperatureSeparator.text = "/"
-        minTemperatureLabel.text = "\(daily[0].minTemperature)℃"
+        minTemperatureLabel.text = "\(daily[0].minTemperature)°"
     }
     //MARK: - setup layout
     private func setupCurrentWeatherViewConstraints() {
@@ -161,7 +160,8 @@ class DetailedHeadViewController: UIViewController {
         NSLayoutConstraint.activate([
             locationNameLabel.leadingAnchor.constraint(equalTo: peakTemperaturesView.trailingAnchor, constant: innerInset),
             locationNameLabel.centerYAnchor.constraint(equalTo: currentWeatherBackgroundView.centerYAnchor),
-            locationNameLabel.trailingAnchor.constraint(equalTo: currentWeatherBackgroundView.trailingAnchor, constant: -innerInset)
+            locationNameLabel.trailingAnchor.constraint(equalTo: currentWeatherBackgroundView.trailingAnchor, constant: -innerInset),
+            locationNameLabel.widthAnchor.constraint(lessThanOrEqualTo: currentWeatherBackgroundView.widthAnchor, multiplier: 0.5)
         ])
         
         view.setHeight(view.frame.height + currentWeatherViewHeight + inset)

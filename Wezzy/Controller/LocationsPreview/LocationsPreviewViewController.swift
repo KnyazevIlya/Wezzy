@@ -16,9 +16,9 @@ class LocationsPreviewViewController: UIViewController {
 
     //MARK: - public properties
     var collectionView: UICollectionView!
+    var locations = [Location]()
     
     //MARK: - private properties
-    private var locations = [Location]()
     private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     //MARK: - life cycle
@@ -47,6 +47,8 @@ class LocationsPreviewViewController: UIViewController {
         
         collectionView.register(PreviewCollectionViewCell.self, forCellWithReuseIdentifier: PreviewCollectionViewCell.reuseId)
         collectionView.register(AddPreviewCollectionViewCell.self, forCellWithReuseIdentifier: AddPreviewCollectionViewCell.reuseId)
+        
+        collectionView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: #selector(handleLongPressGesture)))
     }
     
     //MARK: - private methods
@@ -121,6 +123,12 @@ class LocationsPreviewViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func deleteLocation(_ location: Location) {
+        locations.remove(at: locations.firstIndex(of: location)!)
+        context.delete(location)
+        updateContext()
     }
 }
 
