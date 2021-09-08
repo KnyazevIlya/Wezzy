@@ -14,6 +14,7 @@
 		840A46E926E7BABF001570CD /* DetailedCurrentWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A46E826E7BABF001570CD /* DetailedCurrentWeatherViewController.swift */; };
 		840A46EE26E7E5B2001570CD /* LocationsPreview+Gestures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A46ED26E7E5B2001570CD /* LocationsPreview+Gestures.swift */; };
 		8440E6B326E2C838002F5AAC /* DetailedHeadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */; };
+		8444A38226E8C44300C7B07E /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8444A38126E8C44200C7B07E /* CoreDataManager.swift */; };
 		8454180D26D679AD00480569 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454180C26D679AD00480569 /* AppDelegate.swift */; };
 		8454181126D679AD00480569 /* LocationsPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8454181026D679AD00480569 /* LocationsPreviewViewController.swift */; };
 		8454181726D679AD00480569 /* Wezzy.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8454181526D679AD00480569 /* Wezzy.xcdatamodeld */; };
@@ -109,6 +110,7 @@
 		840A46ED26E7E5B2001570CD /* LocationsPreview+Gestures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationsPreview+Gestures.swift"; sourceTree = "<group>"; };
 		8440E6A726E2C6D6002F5AAC /* DetailedViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewControllerExtension.swift; sourceTree = "<group>"; };
 		8440E6B226E2C838002F5AAC /* DetailedHeadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedHeadViewController.swift; sourceTree = "<group>"; };
+		8444A38126E8C44200C7B07E /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		8454180926D679AD00480569 /* Wezzy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wezzy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8454180C26D679AD00480569 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8454181026D679AD00480569 /* LocationsPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsPreviewViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +349,7 @@
 				8454188226DA8C8800480569 /* RequestManager.swift */,
 				8454188C26DC334C00480569 /* WeatherConditionManager.swift */,
 				84699DE626E5047B0033C864 /* ImageProcessingManager.swift */,
+				8444A38126E8C44200C7B07E /* CoreDataManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -727,6 +730,7 @@
 				8454188326DA8C8800480569 /* RequestManager.swift in Sources */,
 				84699DBF26E42C150033C864 /* DetailedViewControllerExtension.swift in Sources */,
 				8454186726D7E28C00480569 /* AddPreviewCollectionViewCell.swift in Sources */,
+				8444A38226E8C44300C7B07E /* CoreDataManager.swift in Sources */,
 				8454185126D6B68D00480569 /* PreviewCollectionViewCell.swift in Sources */,
 				84699DF626E60A5C0033C864 /* UIView+RoundedCorners.swift in Sources */,
 				8454195026E02CF000480569 /* LocationsPreview+Alert.swift in Sources */,

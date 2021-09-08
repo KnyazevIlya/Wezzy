@@ -23,8 +23,11 @@ extension LocationsPreviewViewController {
                            actionTitle: "Delete",
                            actionStyle: .destructive) { [weak self] _ in
                 
-                self?.deleteLocation(location)
-                self?.collectionView.deleteItems(at: [indexPath])
+                guard let self = self else { return }
+                
+                self.coreDataManager.delete(location: location)
+                self.locations.remove(at: self.locations.firstIndex(of: location)!)
+                self.collectionView.deleteItems(at: [indexPath])
             }
         }
     }

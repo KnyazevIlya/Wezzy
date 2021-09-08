@@ -17,9 +17,7 @@ class LocationsPreviewViewController: UIViewController {
     //MARK: - public properties
     var collectionView: UICollectionView!
     var locations = [Location]()
-    
-    //MARK: - private properties
-    private var context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var coreDataManager = CoreDataManager.shared
     
     //MARK: - life cycle
     override func viewDidLoad() {
@@ -59,76 +57,15 @@ class LocationsPreviewViewController: UIViewController {
         return url
     }
     
-    //MARK: - CoreData managing
-    private func updateContext() {
-        do {
-            try context.save()
-        } catch {
-            
-        }
-    }
-    
-    private func fetchLocations(completion: ([Location]) -> Void) {
-        do {
-            let results = try context.fetch(Location.fetchRequest()) as! [Location]
-            completion(results)
-        } catch {
-            fatalError("Unable to fetch the locations from the persistant storage, try to launch the app again!")
-        }
-    }
-    
-    private func addLocation(withName name: String, data: WeatherRoot, coordinates: CLLocationCoordinate2D) {
-        let newLocation = Location(context: context)
-        let currentWeather = CurrentWeather(context: context)
-        
-        newLocation.current = currentWeather
-        
-        newLocation.name = name
-        newLocation.latitude = coordinates.latitude
-        newLocation.longtitude = coordinates.longitude
-        newLocation.lastUpdate = Date()
-        
-        updateLocation(location: newLocation, data: data)
-    }
-    
-    private func updateLocation(location: Location, data: WeatherRoot) {
-        
-        location.lastUpdate = Date()
-        
-        location.current?.temperature = Int64(data.current.temp)
-        location.current?.currentTime = Int64(data.current.dt)
-        location.current?.sunrise = Int64(data.current.sunrise)
-        location.current?.sunset = Int64(data.current.sunset)
-        location.current?.conditionId = Int64(data.current.weather[0].id)
-        
-        for (index, day) in data.daily.enumerated() {
-            let dailyWeather = DailyWeather(context: context)
-            
-            dailyWeather.dayNumber = Int64(index)
-            dailyWeather.minTemperature = Int64(day.temp.min)
-            dailyWeather.maxTemperature = Int64(day.temp.max)
-            
-            location.addToDaily(dailyWeather)
-        }
-        
-        updateContext()
-    }
-    
     private func updateLocations() {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
-            self?.fetchLocations { (locations) in
+            self?.coreDataManager.fetchLocations { (locations) in
                 self?.locations = locations
                 DispatchQueue.main.async {
                     self?.collectionView.reloadData()
                 }
             }
         }
-    }
-    
-    func deleteLocation(_ location: Location) {
-        locations.remove(at: locations.firstIndex(of: location)!)
-        context.delete(location)
-        updateContext()
     }
 }
 
@@ -187,7 +124,7 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
                     case .failure(let error):
                         print(error.localizedDescription)
                     case .success(let model):
-                        self?.updateLocation(location: location, data: model)
+                        self?.coreDataManager.updateLocation(location: location, data: model)
                     }
                 }
             }
@@ -236,7 +173,10 @@ extension LocationsPreviewViewController: ManageLocationDelegate {
                         }
                         
                     case .success(let model):
-                        self?.addLocation(withName: mapItem.name!, data: model, coordinates: mapItem.placemark.coordinate)
+                        guard let newLocation = self?.coreDataManager.addLocation(withName: mapItem.name!,
+                                                                                  data: model,
+                                                                                  coordinates: mapItem.placemark.coordinate) else { return }
+                        self?.locations.append(newLocation)
                         self?.updateLocations()
                     }
                 }
