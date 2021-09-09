@@ -32,7 +32,6 @@ class DetailedHeadViewController: UIViewController {
     private lazy var currentWeatherBackgroundView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
         view.layer.cornerRadius = 20
         view.backgroundColor = UIColor(white: 1, alpha: 0.5)
         return view
@@ -145,7 +144,7 @@ class DetailedHeadViewController: UIViewController {
             temperatureLabel.topAnchor.constraint(equalTo: currentWeatherBackgroundView.topAnchor, constant: innerInset),
             temperatureLabel.leadingAnchor.constraint(equalTo: currentWeatherBackgroundView.leadingAnchor, constant: innerInset),
             temperatureLabel.bottomAnchor.constraint(equalTo: currentWeatherBackgroundView.bottomAnchor, constant:  -innerInset),
-            temperatureLabel.trailingAnchor.constraint(lessThanOrEqualTo: currentWeatherBackgroundView.trailingAnchor, constant: -200)
+            temperatureLabel.trailingAnchor.constraint(equalTo: currentWeatherBackgroundView.trailingAnchor, constant: -250)
         ])
 
         //peak temperatures view positioning

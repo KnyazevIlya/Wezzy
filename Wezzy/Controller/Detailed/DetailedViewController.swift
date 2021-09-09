@@ -39,7 +39,7 @@ class DetailedViewController: UIViewController {
        let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .leading
-        stackView.spacing = 10
+        stackView.spacing = 0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
@@ -134,6 +134,7 @@ class DetailedViewController: UIViewController {
         add(head)
         
         let current = DetailedCurrentWeatherViewController()
+        current.location = location
         add(current)
     }
 }

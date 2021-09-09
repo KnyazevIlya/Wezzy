@@ -238,6 +238,13 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8444A38626E8F33D00C7B07E /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		8454180026D679AD00480569 = {
 			isa = PBXGroup;
 			children = (
@@ -263,6 +270,7 @@
 		8454180B26D679AD00480569 /* Wezzy */ = {
 			isa = PBXGroup;
 			children = (
+				8444A38626E8F33D00C7B07E /* Helpers */,
 				8440E6A626E2C676002F5AAC /* Extensions */,
 				8454188126DA8A4100480569 /* Managers */,
 				8454184B26D6B3AE00480569 /* Model */,

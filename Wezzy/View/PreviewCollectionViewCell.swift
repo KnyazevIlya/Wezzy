@@ -62,6 +62,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
             view.removeFromSuperview()
         }
         foregroundImage = SVGView(named: svgName, animationOwner: .svg)
+        foregroundImage.translatesAutoresizingMaskIntoConstraints = false
         configureForegroundImage()
     }
     

@@ -130,14 +130,10 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             }
             //TODO: move this logic to cell
             
-            let id = location.current?.conditionId ?? 0
-            if let conditionNameTuple = WeatherConditionManager.conditions[Int(id)] {
-                let daytimeCode = location.current?.isDay ?? true ? 0 : 1
-                let conditionName = conditionNameTuple[daytimeCode]
-                cell.configureForeground(svgName: conditionName)
-            } else {
-                cell.configureForeground(svgName: "not-available")
-            }
+            let conditionName = WeatherConditionManager.getConditionName(
+                id: Int(location.current?.conditionId ?? 0),
+                isDay: location.current?.isDay ?? true)
+            cell.configureForeground(svgName: conditionName)
             
             cell.backgroundImage.image = #imageLiteral(resourceName: "testImage")
             cell.nameLabel.text = location.name

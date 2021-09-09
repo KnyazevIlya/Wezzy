@@ -8,7 +8,7 @@
 class WeatherConditionManager {
     static let conditions = [
         //Miscellaneous
-        0: ["not-available"],
+        0: ["not-available", "not-available"],
         
         //Thunder
         200: ["thunderstorms-day-rain", "thunderstorms-night-rain"],
@@ -78,5 +78,14 @@ class WeatherConditionManager {
         802: ["partly-cloudy-day", "partly-cloudy-night"],
         803: ["overcast-day", "overcast-night"],
         804: ["cloudy", "cloudy"]
-    ] as [Int : [String]]
+    ]
+    
+    static func getConditionName(id: Int, isDay: Bool) -> String {
+        let daytimeCode = isDay ? 0 : 1
+        if let conditionTuple = conditions[id] {
+            return conditionTuple[daytimeCode]
+        }
+        
+        return "not-available"
+    }
 }
