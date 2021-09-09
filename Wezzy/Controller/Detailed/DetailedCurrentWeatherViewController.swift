@@ -29,7 +29,9 @@ class DetailedCurrentWeatherViewController: UIViewController {
         super.viewDidLoad()
         
         configureWeatherConditionSVG()
+        configureDetailedCurrentWeather()
         setupWeatherConditionSVGConstraints()
+        setupDetailedCurrentWeather()
     }
     
     private func configureWeatherConditionSVG() {
@@ -45,6 +47,11 @@ class DetailedCurrentWeatherViewController: UIViewController {
         weatherConditionSVG.layer.cornerRadius = 20
     }
     
+    private func configureDetailedCurrentWeather() {
+        detailedCurrentWeatherBackground.backgroundColor = UIColor(white: 1, alpha: 0.5)
+        detailedCurrentWeatherBackground.layer.cornerRadius = 20
+    }
+    
     private func setupWeatherConditionSVGConstraints() {
         view.addSubview(weatherConditionSVG)
         
@@ -56,5 +63,16 @@ class DetailedCurrentWeatherViewController: UIViewController {
         ])
         
         view.setHeight(detailedCurrentWeatherHeight + inset)
+    }
+    
+    private func setupDetailedCurrentWeather() {
+        view.addSubview(detailedCurrentWeatherBackground)
+        
+        NSLayoutConstraint.activate([
+            detailedCurrentWeatherBackground.topAnchor.constraint(equalTo: view.topAnchor),
+            detailedCurrentWeatherBackground.leftAnchor.constraint(equalTo: weatherConditionSVG.rightAnchor, constant: inset),
+            detailedCurrentWeatherBackground.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -inset),
+            detailedCurrentWeatherBackground.heightAnchor.constraint(equalToConstant: detailedCurrentWeatherHeight)
+        ])
     }
 }
