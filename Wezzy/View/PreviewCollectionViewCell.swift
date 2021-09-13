@@ -41,7 +41,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private var foregroundImage: SVGView!
+    private var foregroundImage = SVGView(named: "not-available", animationOwner: .svg)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,9 +58,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
     }
     
     func configureForeground(svgName: String) {
-        if let view = foregroundImage {
-            view.removeFromSuperview()
-        }
+        foregroundImage.removeFromSuperview()
         foregroundImage = SVGView(named: svgName, animationOwner: .svg)
         foregroundImage.translatesAutoresizingMaskIntoConstraints = false
         configureForegroundImage()
@@ -94,7 +92,7 @@ class PreviewCollectionViewCell: UICollectionViewCell {
         NSLayoutConstraint.activate([
             nameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             nameLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 10),
-            nameLabel.trailingAnchor.constraint(greaterThanOrEqualToSystemSpacingAfter: contentView.trailingAnchor, multiplier: 0.7)
+            nameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ])
     }
     

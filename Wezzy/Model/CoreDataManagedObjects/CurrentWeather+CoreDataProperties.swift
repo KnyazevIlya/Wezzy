@@ -22,6 +22,7 @@ extension CurrentWeather {
     @NSManaged public var sunrise: Int64
     @NSManaged public var sunset: Int64
     @NSManaged public var temperature: Int64
+    @NSManaged public var weatherCondition: String
     @NSManaged public var location: Location?
     
     public var isDay: Bool {

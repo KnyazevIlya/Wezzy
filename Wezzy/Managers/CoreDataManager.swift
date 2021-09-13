@@ -58,6 +58,7 @@ class CoreDataManager {
         location.current?.sunrise = Int64(data.current.sunrise)
         location.current?.sunset = Int64(data.current.sunset)
         location.current?.conditionId = Int64(data.current.weather[0].id)
+        location.current?.weatherCondition = data.current.weather[0].description
         
         for (index, day) in data.daily.enumerated() {
             let dailyWeather = DailyWeather(context: context)

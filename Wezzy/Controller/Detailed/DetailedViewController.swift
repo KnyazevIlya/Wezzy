@@ -133,8 +133,8 @@ class DetailedViewController: UIViewController {
         head.location = location
         add(head)
         
-        let current = DetailedCurrentWeatherViewController()
-        current.location = location
-        add(current)
+//        let current = DetailedCurrentWeatherViewController()
+//        current.location = location
+//        add(current)
     }
 }
