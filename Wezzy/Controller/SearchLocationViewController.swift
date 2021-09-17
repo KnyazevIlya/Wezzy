@@ -136,8 +136,9 @@ extension SearchLocationViewController: UITableViewDelegate, UITableViewDataSour
                     print(error.localizedDescription)
                 } else {
                     guard let response = response else { return }
-                    
-                    self?.delegate?.addLocation(mapItem: response.mapItems[0])
+                    let mapItem = response.mapItems[0]
+                    mapItem.name = completion.title
+                    self?.delegate?.addLocation(mapItem: mapItem)
                 }
             }
         }

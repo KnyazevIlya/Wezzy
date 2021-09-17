@@ -19,8 +19,14 @@ class DetailedViewController: UIViewController {
         scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.contentInsetAdjustmentBehavior = .never
         
+        var safeAreaTopInset: CGFloat = 0
+        if #available(iOS 13.0, *) {
+            let window = UIApplication.shared.windows.first!
+            safeAreaTopInset = window.safeAreaInsets.top
+        }
+        
         let insets = UIEdgeInsets(
-            top: navigationController?.navigationBar.frame.height ?? 0,
+            top: (navigationController?.navigationBar.frame.height ?? 0)/2 + safeAreaTopInset,
             left: 0,
             bottom: 0,
             right: 0)

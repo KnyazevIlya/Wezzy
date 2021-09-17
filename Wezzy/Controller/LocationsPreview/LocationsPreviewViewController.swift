@@ -136,7 +136,14 @@ extension LocationsPreviewViewController: UICollectionViewDataSource {
             cell.configureForeground(svgName: conditionName)
             
             cell.backgroundImage.image = #imageLiteral(resourceName: "testImage")
-            cell.nameLabel.text = location.name
+            
+            let locationNameWordsArray = location.name!.split(separator: ",")
+            var locationBriefName = String(locationNameWordsArray.first!)
+            if locationNameWordsArray.count > 1 {
+                locationBriefName = String("\(locationNameWordsArray.first!), \(locationNameWordsArray.last!)")
+            }
+            
+            cell.nameLabel.text = locationBriefName
             
             if let current = location.current {
                 cell.temperatureLabel.text = "\(current.temperature)℃"
@@ -169,11 +176,23 @@ extension LocationsPreviewViewController: ManageLocationDelegate {
                         }
                         
                     case .success(let model):
-                        guard let newLocation = self?.coreDataManager.addLocation(withName: mapItem.name!,
-                                                                                  data: model,
-                                                                                  coordinates: mapItem.placemark.coordinate) else { return }
-                        self?.locations.append(newLocation)
-                        self?.updateLocations()
+                        
+                        guard let self = self else { return }
+                        
+                        if self.locations.contains(where: { (location) -> Bool in
+                            location.name == mapItem.name!
+                        }) {
+                            self.showAlert(title: "Location \(mapItem.name!) has been already been added!",
+                                           message: "You can't add the same location more than once.")
+                            return
+                        }
+                        
+                        let newLocation = self.coreDataManager.addLocation(
+                                withName: mapItem.name!,
+                                data: model,
+                                coordinates: mapItem.placemark.coordinate)
+                        self.locations.append(newLocation)
+                        self.updateLocations()
                     }
                 }
             }

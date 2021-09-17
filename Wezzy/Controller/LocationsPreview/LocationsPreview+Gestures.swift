@@ -16,18 +16,20 @@ extension LocationsPreviewViewController {
         let holdPoint = gesture.location(in: collectionView)
         
         if let indexPath = collectionView.indexPathForItem(at: holdPoint) {
-            let location = locations[indexPath.item]
-            
-            showLogicAlert(title: "Delete \"\(location.name ?? "")\" location",
-                           message: "You will be able to add this location again.",
-                           actionTitle: "Delete",
-                           actionStyle: .destructive) { [weak self] _ in
+            if indexPath.item < locations.count {
+                let location = locations[indexPath.item]
                 
-                guard let self = self else { return }
-                
-                self.coreDataManager.delete(location: location)
-                self.locations.remove(at: self.locations.firstIndex(of: location)!)
-                self.collectionView.deleteItems(at: [indexPath])
+                showLogicAlert(title: "Delete \"\(location.name ?? "")\" location",
+                               message: "You will be able to add this location again.",
+                               actionTitle: "Delete",
+                               actionStyle: .destructive) { [weak self] _ in
+                    
+                    guard let self = self else { return }
+                    
+                    self.coreDataManager.delete(location: location)
+                    self.locations.remove(at: self.locations.firstIndex(of: location)!)
+                    self.collectionView.deleteItems(at: [indexPath])
+                }
             }
         }
     }

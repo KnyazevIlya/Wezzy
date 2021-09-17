@@ -54,7 +54,7 @@ class DetailedHeadViewController: UIViewController {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 32, weight: .thin)
-        label.numberOfLines = 2
+        label.numberOfLines = 3
         label.textAlignment = .center
         label.adjustsFontSizeToFitWidth = true
         return label
