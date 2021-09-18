@@ -273,7 +273,7 @@ class DetailedHeadViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             detailedCurrentWeatherBackground.topAnchor.constraint(equalTo: briefLocationInfoBackgroundView.bottomAnchor, constant: inset),
-            detailedCurrentWeatherBackground.leftAnchor.constraint(equalTo: weatherConditionSVG.rightAnchor, constant: inset),
+            detailedCurrentWeatherBackground.leftAnchor.constraint(equalTo: weatherConditionSVG.rightAnchor, constant: 10),
             detailedCurrentWeatherBackground.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -inset),
             detailedCurrentWeatherBackground.heightAnchor.constraint(equalToConstant: detailedCurrentWeatherHeight)
         ])

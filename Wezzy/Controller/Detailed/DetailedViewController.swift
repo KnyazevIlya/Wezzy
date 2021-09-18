@@ -138,5 +138,8 @@ class DetailedViewController: UIViewController {
         let head = DetailedHeadViewController()
         head.location = location
         add(head)
+        
+        let plates = ConditionPlatesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        add(plates)
     }
 }
