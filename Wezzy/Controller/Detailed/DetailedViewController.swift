@@ -140,6 +140,7 @@ class DetailedViewController: UIViewController {
         add(head)
         
         let plates = ConditionPlatesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
+        plates.location = location
         add(plates)
     }
 }

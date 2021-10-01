@@ -209,6 +209,7 @@ class DetailedHeadViewController: UIViewController {
         //location name label positioning
         NSLayoutConstraint.activate([
             locationNameLabel.centerYAnchor.constraint(equalTo: briefLocationInfoBackgroundView.centerYAnchor),
+            locationNameLabel.heightAnchor.constraint(equalTo: briefLocationInfoBackgroundView.heightAnchor),
             locationNameLabel.leftAnchor.constraint(equalTo: peakTemperaturesView.rightAnchor, constant: inset),
             locationNameLabel.rightAnchor.constraint(equalTo: briefLocationInfoBackgroundView.rightAnchor, constant: -inset)
         ])

@@ -14,6 +14,7 @@ class ConditionPlateCollectionViewCell: UICollectionViewCell {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
+        view.contentMode = .center
         view.image = UIImage(named: "not-available")
         return view
     }()
@@ -53,10 +54,10 @@ class ConditionPlateCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(plateImageView)
         
         NSLayoutConstraint.activate([
-            plateImageView.topAnchor.constraint(equalTo: contentView.topAnchor),
+            plateImageView.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 10),
             plateImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             plateImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
-            plateImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.4)
+            plateImageView.heightAnchor.constraint(equalTo: contentView.heightAnchor, multiplier: 0.4, constant: -10)
         ])
         
         contentView.addSubview(plateTitleLabel)

@@ -22,6 +22,12 @@ extension CurrentWeather {
     @NSManaged public var sunrise: Int64
     @NSManaged public var sunset: Int64
     @NSManaged public var temperature: Int64
+    @NSManaged public var feelsLike: Int64
+    @NSManaged public var humidity: Int64
+    @NSManaged public var visibility: Int64
+    @NSManaged public var clouds: Int64
+    @NSManaged public var pressure: Int64
+    @NSManaged public var uvi: Double
     @NSManaged public var weatherCondition: String
     @NSManaged public var location: Location?
     

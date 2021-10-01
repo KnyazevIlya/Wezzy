@@ -9,6 +9,8 @@ import UIKit
 
 class ConditionPlatesCollectionViewController: UICollectionViewController {
     
+    var location: Location?
+    
     private let inset: CGFloat = 20
     private let plateInset: CGFloat = 10
     private var plateHeight: CGFloat = 0
@@ -23,13 +25,12 @@ class ConditionPlatesCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for _ in 0..<6 {
-            let plate = Plate(image: UIImage(named: "not-available")!, title: "Pressure", detailed: "1078pa")
-            plates.append(plate)
-        }
+        
+        createPlates()
         collectionView.backgroundColor = .clear
         configureCollectionView()
         calculateSize()
+        
     }
     
     private func configureCollectionView() {
@@ -43,7 +44,18 @@ class ConditionPlatesCollectionViewController: UICollectionViewController {
         plateHeight = (view.frame.width - inset * 2 - plateInset * 2) / 3
         let collectionHeight = plateHeight * 2 + inset + plateInset
         view.setHeight(collectionHeight)
+    }
+    
+    private func createPlates() {
+        guard let current = location?.current else { return }
         
+        plates.append(Plate(image: UIImage(named: "thermometer")!, title: "feels like", detailed: "\(current.feelsLike)"))
+        plates.append(Plate(image: UIImage(named: "humidity")!, title: "humidity", detailed: "\(current.humidity)"))
+        plates.append(Plate(image: UIImage(named: "uv-index")!, title: "uvi", detailed: "\(current.uvi)"))
+        plates.append(Plate(image: UIImage(named: "not-available")!, title: "visibility", detailed: "\(current.visibility)"))
+        plates.append(Plate(image: UIImage(named: "cloudy")!, title: "clouds", detailed: "\(current.clouds)"))
+        plates.append(Plate(image: UIImage(named: "barometer")!, title: "pressure", detailed: "\(current.pressure)"))
+
     }
 
     // MARK: UICollectionViewDataSource

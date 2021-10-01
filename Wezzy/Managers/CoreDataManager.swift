@@ -58,6 +58,12 @@ class CoreDataManager {
         location.current?.sunrise = Int64(data.current.sunrise)
         location.current?.sunset = Int64(data.current.sunset)
         location.current?.conditionId = Int64(data.current.weather[0].id)
+        location.current?.feelsLike = Int64(data.current.feelsLike)
+        location.current?.humidity = Int64(data.current.humidity)
+        location.current?.uvi = data.current.uvi
+        location.current?.visibility = Int64(data.current.visibility)
+        location.current?.clouds = Int64(data.current.clouds)
+        location.current?.pressure = Int64(data.current.pressure)
         location.current?.weatherCondition = data.current.weather[0].description
         
         for (index, day) in data.daily.enumerated() {
