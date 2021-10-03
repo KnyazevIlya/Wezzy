@@ -15,6 +15,15 @@ class ConditionPlatesCollectionViewController: UICollectionViewController {
     private let plateInset: CGFloat = 10
     private var plateHeight: CGFloat = 0
     
+    var mainColor: UIColor = .black {
+        didSet {
+            for index in 0..<plates.count {
+                let cell = collectionView.cellForItem(at: IndexPath(item: index, section: 0)) as! ConditionPlateCollectionViewCell
+                cell.mainColor = mainColor
+            }
+        }
+    }
+    
     private struct Plate {
         var image: UIImage
         var title: String

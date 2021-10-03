@@ -11,6 +11,7 @@ import SpriteKit
 class DetailedViewController: UIViewController {
 
     var location: Location?
+    var previewImage: UIImage = #imageLiteral(resourceName: "testImage")
     
     private lazy var scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -134,13 +135,38 @@ class DetailedViewController: UIViewController {
         }
     }
     
+    //MARK: - color managing
+    private func createAverageColor(completion: @escaping (UIColor) -> Void) {
+        guard let image = previewImage.cgImage else { return }
+        var uiColor: UIColor = .black
+        DispatchQueue.global(qos: .userInteractive).async {
+            let processor = ImageProcessingManager.shared
+            let colorData = processor.getAverageColor(forCGImage: image)
+            uiColor = UIColor(red: CGFloat(colorData.r) / 255,
+                                  green: CGFloat(colorData.g) / 255,
+                                  blue: CGFloat(colorData.b) / 255,
+                                  alpha: 1)
+            
+            completion(uiColor)
+        }
+    }
+    
+    //configure child vcs
     private func addScrollChildren() {
         let head = DetailedHeadViewController()
         head.location = location
+        head.previewImage = previewImage
         add(head)
         
         let plates = ConditionPlatesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         plates.location = location
         add(plates)
+        
+        createAverageColor { color in
+            DispatchQueue.main.async {
+                head.mainColor = color
+                plates.mainColor = color
+            }
+        }
     }
 }

@@ -10,6 +10,14 @@ import UIKit
 class ConditionPlateCollectionViewCell: UICollectionViewCell {
     static let reuseId = "conditionPlate"
     
+    var mainColor: UIColor = .black {
+        didSet {
+            [plateTitleLabel, plateDetailedLabel].forEach {
+                $0.textColor = mainColor
+            }
+        }
+    }
+    
     private lazy var plateImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
